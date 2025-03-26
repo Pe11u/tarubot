@@ -55,8 +55,8 @@
     <section>
       <h2>基本コマンド</h2>
       <ul class="command-list">
-        <li><strong>t?help</strong><span class="command-description">利用可能なコマンドの一覧を表示</span></li>
-        <li><strong>t?tarubot</strong><span class="command-description">ボットの情報を表示</span></li>
+        <li><strong>t?help</strong><span class="command-description">利用可能なコマンドの一覧の表示</span></li>
+        <li><strong>t?tarubot</strong><span class="command-description">ボットの情報の表示</span></li>
         <li><strong>t?ping</strong><span class="command-description">ボットの応答速度（レイテンシ）を確認</span></li>
       </ul>
     </section>
@@ -77,6 +77,7 @@
             <li><strong>項目２</strong>BANする理由</li>
           </ul>
         </li>
+        <li><strong>t?banlist</strong><span class="command-description">過去にBANされたユーザーのIDを確認</span></li>
         <li><strong>t?unban <fade>項目１</fade></strong>
           <span class="command-description">過去にBANしたユーザーのBANを解除<BR><fade>t?unban tarutaru_jpn</fade></span>
           <ul class="command-description">
@@ -119,21 +120,83 @@
       <ul class="command-list">
         <li>
             <strong>t?info <fade>項目１</fade> <fade>項目２</fade></strong>
-            <span class="command-description">ユーザー、チャンネル、サーバーの情報を表示<BR><fade>t?info user @taru</fade></span>
+            <span class="command-description">ユーザー、チャンネル、サーバーの情報の表示<BR><fade>t?info user @taru</fade></span>
             <ul class="command-description">
                 <li><strong>項目１</strong>オプション指定の項目です<BR><BR><fade>user:</fade> ユーザーの情報<BR><fade>channel:</fade> チャンネルの情報</fade><BR><fade>server:</fade> サーバーの情報</li>
                 <li><strong>項目２（条件）</strong>項目１でのオプションがuserの場合、情報を閲覧するユーザーのメンション</li>
             </ul>
         </li>
         <li>
-          <strong>t?punycode <fade>項目１</fade> <fade>項目２</fade> </strong>
-          <span class="command-description">文字列をPunycodeに変換<BR><fade>t?punycode encode たるボット</fade></span>
-          <ul class="command-description">
-            <li><strong>項目１</strong>オプション指定の項目です<BR><BR><fade>encode:</fade> 文字列をエンコード（符号化）<BR><fade>decode:</fade> 文字列をデコード（復号）</fade></li>
-            <li><strong>項目２</strong>変換する文字列</li>
-          </ul>
+            <strong>t?icon <fade>項目１</fade> <fade>項目２</fade></strong>
+            <span class="command-description">ユーザー、サーバーのアイコンの表示<BR><fade>t?icon user @taru</fade></span>
+            <ul class="command-description">
+                <li><strong>項目１</strong>オプション指定の項目です<BR><BR><fade>user:</fade> ユーザーのアイコン<BR><fade>server:</fade> サーバーのアイコン</li>
+                <li><strong>項目２（条件）</strong>項目１でのオプションがuserの場合、アイコンを取得するユーザーのメンション</li>
+            </ul>
         </li>
-      </ul>
+        <li>
+            <strong>t?role <fade>項目１</fade> <fade>項目２</fade></strong>
+            <span class="command-description">ユーザーの所属ロールおよびロールに所属しているユーザーを確認<BR><fade>t?info user @taru</fade></span>
+            <ul class="command-description">
+                <li><strong>項目１</strong>オプション指定の項目です<BR><BR><fade>member:</fade> ロールに所属しているユーザー<BR><fade>check:</fade> ユーザーが所属するロール</fade></li>
+                <li><strong>項目２（条件）</strong>項目１でのオプションがmemberの場合、確認したいユーザーのメンション<BR>checkの場合、確認したいロールのメンション（多数の人に通知が行きます）</li>
+            </ul>
+        </li>
+    </section>
+    <section>
+        <h2>技術コマンド<h2>
+        <ul class="command-list">
+            <li>
+                <strong>t?zishin</strong>
+                <span class="command-description">最新の日本での地震・津波情報の表示<BR>t?eq, t?earthquakeでも使用可能</span>
+            </li>
+            <li>
+                <strong>t?train</strong>
+                <span class="command-description">最新の列車遅延状況の表示</span>
+            </li>
+            <li>
+                <strong>t?qr<fade>項目１</fade></strong>
+                <span class="command-description">文字列をQRコードに変換<BR><fade>t?qr たるボット</fade></span>
+                <ul class="command-description">
+                    <li><strong>項目１</strong>変換する文字列</li>
+                </ul>
+            </li>
+            <li>
+                <strong>t?readqr</strong>
+                <span class="command-description">QRコード画像の読み取り<BR><fade>画像を添付して実行</fade></span>
+            </li>
+            <li>
+            <li>
+                <strong>t?forex<fade>項目１ 項目２</fade></strong>
+                <span class="command-description">外貨と日本円の為替の表示<BR><fade>t?forex たるボット</fade></span>
+                <ul class="command-description">
+                    <li><strong>項目１</strong>変換先の通貨コード</li>
+                    <li><strong>項目２</strong>日本円での値段</li>
+                </ul>
+            </li>
+            <li>
+                <strong>t?ipconfig<fade>項目１</fade></strong>
+                <span class="command-description">IPアドレス情報の表示<BR><fade>t?ipconfig 8.8.8.8</fade></span>
+                <ul class="command-description">
+                    <li><strong>項目１</strong>IPv4, IPv6のIPアドレス</li>
+                </ul>
+            </li>
+                <strong>t?base64<fade>項目１</fade> <fade>項目２</fade> </strong>
+                <span class="command-description">文字列をBase64に変換（Base32, Base58に置き換えても使用可能）<BR><fade>t?base64 encode たるボット</fade></span>
+                <ul class="command-description">
+                    <li><strong>項目１</strong>オプション指定の項目です<BR><BR><fade>encode:</fade> 文字列をエンコード（符号化）<BR><fade>decode:</fade> 文字列をデコード（復号）</fade></li>
+                    <li><strong>項目２</strong>変換する文字列</li>
+                </ul>
+            </li>
+            <li>
+                <strong>t?percent<fade>項目１</fade> <fade>項目２</fade> </strong>
+                <span class="command-description">文字列をPercentに変換<BR><fade>t?ppercent encode たるボット</fade></span>
+                <ul class="command-description">
+                <li><strong>項目１</strong>オプション指定の項目です<BR><BR><fade>encode:</fade> 文字列をエンコード（符号化）<BR><fade>decode:</fade> 文字列をデコード（復号）</fade></li>
+                <li><strong>項目２</strong>変換する文字列</li>
+                </ul>
+            </li>
+        </ul>
     </section>
   </main>
   <footer>
