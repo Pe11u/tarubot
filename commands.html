@@ -70,8 +70,8 @@
             <li><strong>項目２</strong>キックする理由</li>
           </ul>
         </li>
-        <li><strong>t?ban <fade>項目１</fade> <fade>項目２</fade><BR><fade>t?ban @taru 悪質なスパム</fade></strong>
-          <span class="command-description">ユーザーをサーバーからBAN</span>
+        <li><strong>t?ban <fade>項目１</fade> <fade>項目２</fade></strong>
+          <span class="command-description">ユーザーをサーバーからBAN<BR><fade>t?ban @taru 悪質なスパム</fade></span>
           <ul class="command-description">
             <li><strong>項目１</strong>BANするユーザーのメンション</li>
             <li><strong>項目２</strong>BANする理由</li>
@@ -83,8 +83,8 @@
             <li><strong>項目１</strong>BAN解除するユーザーのユーザー名</li>
           </ul>
         </li>
-        <li><strong>t?timeout <fade>項目１</fade> <fade>項目２</fade> <fade>項目３</fade><BR><fade>t?timeout @taru 1d12h30m サーバールールの違反</fade></strong>
-          <span class="command-description">ユーザーをタイムアウト</span>
+        <li><strong>t?timeout <fade>項目１</fade> <fade>項目２</fade> <fade>項目３</fade></strong>
+          <span class="command-description">ユーザーをタイムアウト<BR><fade>t?timeout @taru 1d12h30m 荒らし</fade></span>
           <ul class="command-description">
             <li><strong>項目１</strong>タイムアウトするユーザーのメンション</li>
             <li><strong>項目２</strong>タイムアウトする長さ<BR><BR>d=日, h=時間, m=分<BR>例: 1d12h30m（１日１２時間３０分）</li>
@@ -92,9 +92,9 @@
           </ul>
         </li>
         <li><strong>t?untimeout <fade>項目１</fade></strong>
-            <span class="command-description">タイムアウト中のユーザーのタイムアウトを解除<BR><fade>t?untimeout @taru</fade></span>
+            <span class="command-description">タイムアウト中のユーザーのタイムアウトを解除</span>
             <ul class="command-description">
-              <li><strong>項目１</strong>タイムアウトを解除するユーザーのメンション</li>
+              <li><strong>項目１</strong>タイムアウトを解除するユーザーのメンション<BR><fade>t?untimeout @taru</fade></li>
             </ul>
         </li>
         <li><strong>t?clear <fade>項目１</fade> <fade>項目２</fade></strong>
@@ -105,7 +105,7 @@
             </ul>
         </li>
         <li><strong>t?nickname <fade>項目１</fade> <fade>項目２</fade> <fade>項目３</fade></strong>
-            <span class="command-description">ユーザーのニックネームに変更を加える<BR><fade>t?nickname set @taru たる</fade></span>
+            <span class="command-description">ユーザーのニックネームを変更<BR><fade>t?nickname set @taru たる</fade></span>
             <ul class="command-description">
               <li><strong>項目１</strong>オプション指定の項目です<BR><BR><fade>set:</fade> ニックネームを新しく設定<BR><fade>reset:</fade> ニックネームをリセット</fade></li>
               <li><strong>項目２（条件）</strong>項目１でのオプションがsetの場合、新しく設定するユーザーのメンション</li>
@@ -119,7 +119,7 @@
       <ul class="command-list">
         <li>
             <strong>t?info <fade>項目１</fade> <fade>項目２</fade></strong>
-            <span class="command-description">@ユーザーのアバターを表示</span>
+            <span class="command-description">ユーザー、チャンネル、サーバーの情報を表示<BR><fade>t?info user @taru</fade></span>
             <ul class="command-description">
                 <li><strong>項目１</strong>オプション指定の項目です<BR><BR><fade>user:</fade> ユーザーの情報<BR><fade>channel:</fade> チャンネルの情報</fade><BR><fade>server:</fade> サーバーの情報</li>
                 <li><strong>項目２（条件）</strong>項目１でのオプションがuserの場合、情報を閲覧するユーザーのメンション</li>
@@ -127,7 +127,7 @@
         </li>
         <li>
           <strong>t?punycode <fade>項目１</fade> <fade>項目２</fade> </strong>
-          <span class="command-description">文字列をPunycodeに変換</span>
+          <span class="command-description">文字列をPunycodeに変換<BR><fade>t?punycode encode たるボット</fade></span>
           <ul class="command-description">
             <li><strong>項目１</strong>オプション指定の項目です<BR><BR><fade>encode:</fade> 文字列をエンコード（符号化）<BR><fade>decode:</fade> 文字列をデコード（復号）</fade></li>
             <li><strong>項目２</strong>変換する文字列</li>
