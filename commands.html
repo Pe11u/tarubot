@@ -25,13 +25,13 @@
       font-size: 0.95em;
       color: #555;
     }
-    .command-list ul {
+    ul {
       list-style-type: none;
       padding-left: 0;
     }
     fade {
       font-style: italic;
-      opacity: 0.5;
+      opacity: 0.75;
       color: #005bb5;
       font-weight: normal;
       display: inline;
@@ -63,31 +63,54 @@
     <section>
       <h2>管理コマンド</h2>
       <ul class="command-list">
-        <li><strong>t?kick <fade>項目１</fade></strong>
+        <li><strong>t?kick <fade>項目１</fade> <fade>項目２</fade></strong>
           <span class="command-description">ユーザーをサーバーからキック</span>
           <ul class="command-description">
-            <li><strong>引数１</strong>キックするユーザーのメンション</li>
+            <li><strong>項目１</strong>キックするユーザーのメンション</li>
+            <li><strong>項目２</strong>キックする理由</li>
           </ul>
         </li>
-        <li><strong>t?ban <fade>項目１</fade></strong>
+        <li><strong>t?ban <fade>項目１</fade> <fade>項目２</fade?</strong>
           <span class="command-description">ユーザーをサーバーからBAN</span>
           <ul class="command-description">
-            <li><strong>引数１</strong>BANするユーザーのメンション</li>
+            <li><strong>項目１</strong>BANするユーザーのメンション</li>
+            <li><strong>項目２</strong>BANする理由</li>
           </ul>
         </li>
         <li><strong>t?unban <fade>項目１</fade></strong>
           <span class="command-description">過去にBANしたユーザーのBANを解除</span>
           <ul class="command-description">
-            <li><strong>引数１</strong>BAN解除するユーザーのユーザー名</li>
+            <li><strong>項目１</strong>BAN解除するユーザーのユーザー名</li>
           </ul>
         </li>
-        <li><strong>t?timeout 項目１ 項目２ 項目３</strong>
-          <span class="command-description">過去にBANしたユーザーのBANを解除</span>
+        <li><strong>t?timeout <fade>項目１</fade> <fade>項目２</fade> <fade>項目３</fade> </strong>
+          <span class="command-description">ユーザーをタイムアウト</span>
           <ul class="command-description">
-            <li><strong>引数１</strong>タイムアウトするユーザーのメンション</li>
-            <li><strong>引数２</strong>タイムアウトする長さ<BR><BR>d=日, h=時間, m=分<BR>例: 1d12h30m（１日１２時間３０分）</li>
-            <li><strong>引数３（任意）</strong>タイムアウトする理由</li>
+            <li><strong>項目１</strong>タイムアウトするユーザーのメンション</li>
+            <li><strong>項目２</strong>タイムアウトする長さ<BR><BR>d=日, h=時間, m=分<BR>例: 1d12h30m（１日１２時間３０分）</li>
+            <li><strong>項目３（任意）</strong>タイムアウトする理由</li>
           </ul>
+        </li>
+        <li><strong>t?untimeout <fade>項目１</fade></strong>
+            <span class="command-description">タイムアウト中のユーザーのタイムアウトを解除</span>
+            <ul class="command-description">
+              <li><strong>項目１</strong>タイムアウトを解除するユーザーのメンション</li>
+            </ul>
+        </li>
+        <li><strong>t?clear <fade>項目１</fade> <fade>項目２</fade></strong>
+            <span class="command-description">複数のメッセージを一括削除</span>
+            <ul class="command-description">
+              <li><strong>項目１</strong>削除するメッセージの数</li>
+              <li><strong>項目２（任意）</strong>メッセージ送信者をメンションでフィルター</li>
+            </ul>
+        </li>
+        <li><strong>t?nickname <fade>項目１</fade> <fade>項目２</fade> <fade>項目３</fade></strong>
+            <span class="command-description">ユーザーのニックネームに変更を加える</span>
+            <ul class="command-description">
+              <li><strong>項目１</strong>オプション指定の項目です<BR><BR><fade>set:</fade> ニックネームを新しく設定<BR><fade>reset:</fade> ニックネームをリセット</fade></li>
+              <li><strong>項目２（条件）</strong>項目１でのオプションがsetの場合、新しく設定するユーザーのメンション</li>
+              <li><strong>項目２（条件）</strong>項目１でのオプションがsetの場合、新しく設定するニックネーム</li>
+            </ul>
         </li>
       </ul>
     </section>
@@ -97,11 +120,11 @@
         <li><strong>t?avatar @ユーザー</strong><span class="command-description">@ユーザーのアバターを表示</span></li>
         <li><strong>t?serverinfo</strong><span class="command-description">サーバーの情報を表示</span></li>
         <li>
-          <strong>t?punycode 引数１ 引数２</strong>
+          <strong>t?punycode <fade>項目１</fade> <fade>項目２</fade> </strong>
           <span class="command-description">ドメイン名を Punycode へ変換</span>
           <ul class="command-description">
-            <li><strong>引数１：</strong> 変換する文字列</li>
-            <li><strong>引数２：</strong> オプション設定（例: エンコード/デコード）</li>
+            <li><strong>項目１</strong> 変換する文字列</li>
+            <li><strong>項目２</strong> オプション設定（例: エンコード/デコード）</li>
           </ul>
         </li>
       </ul>
