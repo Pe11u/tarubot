@@ -6,113 +6,66 @@
   <title>たるボット - コマンド一覧</title>
   <link rel="stylesheet" href="assets/styles.css">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background-color: #f4f4f4;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: #0073e6;
-      color: #fff;
-      padding: 15px;
-      text-align: center;
-    }
-    nav ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      background: #005bb5;
-    }
-    nav ul li {
-      margin: 0 15px;
-    }
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-    }
-    main {
-      width: 80%;
-      margin: 20px auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    }
-    section {
-      margin-bottom: 20px;
-    }
-    h2 {
-      border-bottom: 2px solid #0073e6;
-      padding-bottom: 5px;
-      color: #0073e6;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
     li {
       background: #e9f5ff;
-      padding: 10px;
-      margin: 5px 0;
-      border-radius: 5px;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     }
     strong {
       display: block;
-      font-size: 1.1em;
+      font-size: 1.2em;
       color: #005bb5;
+      margin-bottom: 5px;
     }
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #0073e6;
-      color: white;
-      margin-top: 20px;
+    .command-description {
+      margin-top: 5px;
+      padding-left: 10px;
+      font-size: 0.95em;
+      color: #555;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>たるボット コマンド一覧</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="commands.html">コマンド一覧</a></li>
+        <li><a href="terms_of_service.html">利用規約</a></li>
+        <li><a href="privacy_policy.html">プライバシーポリシー</a></li>
+        <li><a href="https://github.com/pe11u" target="_blank">GitHub</a></li>
+      </ul>
+    </nav>
   </header>
-  <nav>
-    <ul>
-      <li><a href="index.html">ホーム</a></li>
-      <li><a href="commands.html">コマンド一覧</a></li>
-      <li><a href="terms_of_service.html">利用規約</a></li>
-      <li><a href="privacy_policy.html">プライバシーポリシー</a></li>
-      <li><a href="https://github.com/pe11u" target="_blank">GitHub</a></li>
-    </ul>
-  </nav>
   <main>
     <section>
       <h2>基本コマンド</h2>
       <ul>
-        <li><strong>t?help</strong> 利用可能なコマンドの一覧を表示</li>
-        <li><strong>t?info</strong> ボットの情報を表示</li>
-        <li><strong>t?ping</strong> ボットの応答速度を確認</li>
+        <li><strong>t?help</strong><span class="command-description">利用可能なコマンドの一覧を表示</span></li>
+        <li><strong>t?info</strong><span class="command-description">ボットの情報を表示</span></li>
+        <li><strong>t?ping</strong><span class="command-description">ボットの応答速度を確認</span></li>
       </ul>
     </section>
     <section>
       <h2>管理コマンド</h2>
       <ul>
-        <li><strong>t?kick @ユーザー</strong> @ユーザーをサーバーからキック</li>
-        <li><strong>t?ban @ユーザー</strong> @ユーザーをサーバーからBAN</li>
-        <li><strong>t?mute @ユーザー</strong> @ユーザーをミュート</li>
+        <li><strong>t?kick @ユーザー</strong><span class="command-description">@ユーザーをサーバーからキック</span></li>
+        <li><strong>t?ban @ユーザー</strong><span class="command-description">@ユーザーをサーバーからBAN</span></li>
+        <li><strong>t?mute @ユーザー</strong><span class="command-description">@ユーザーをミュート</span></li>
       </ul>
     </section>
     <section>
       <h2>その他のコマンド</h2>
       <ul>
-        <li><strong>t?avatar @ユーザー</strong> @ユーザーのアバターを表示</li>
-        <li><strong>t?serverinfo</strong> サーバーの情報を表示</li>
+        <li><strong>t?avatar @ユーザー</strong><span class="command-description">@ユーザーのアバターを表示</span></li>
+        <li><strong>t?serverinfo</strong><span class="command-description">サーバーの情報を表示</span></li>
         <li>
           <strong>t?punycode 引数１ 引数２</strong>
-          <p>ドメイン名を Punycode へ変換</p>
-          <ul>
+          <span class="command-description">ドメイン名を Punycode へ変換</span>
+          <ul class="command-description">
             <li><strong>引数１：</strong> 変換する文字列</li>
             <li><strong>引数２：</strong> オプション設定（例: エンコード/デコード）</li>
           </ul>
