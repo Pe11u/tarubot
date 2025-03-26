@@ -49,16 +49,31 @@
       <h2>基本コマンド</h2>
       <ul class="command-list">
         <li><strong>t?help</strong><span class="command-description">利用可能なコマンドの一覧を表示</span></li>
-        <li><strong>t?info</strong><span class="command-description">ボットの情報を表示</span></li>
-        <li><strong>t?ping</strong><span class="command-description">ボットの応答速度を確認</span></li>
+        <li><strong>t?tarubot</strong><span class="command-description">ボットの情報を表示</span></li>
+        <li><strong>t?ping</strong><span class="command-description">ボットの応答速度（レイテンシ）を確認</span></li>
       </ul>
     </section>
     <section>
       <h2>管理コマンド</h2>
       <ul class="command-list">
-        <li><strong>t?kick @ユーザー</strong><span class="command-description">@ユーザーをサーバーからキック</span></li>
-        <li><strong>t?ban @ユーザー</strong><span class="command-description">@ユーザーをサーバーからBAN</span></li>
-        <li><strong>t?mute @ユーザー</strong><span class="command-description">@ユーザーをミュート</span></li>
+        <li><strong>t?kick 項目１</strong>
+          <span class="command-description">ユーザーをサーバーからキック</span>
+          <ul class="command-description">
+            <li><strong>引数１</strong>キックするユーザーのメンション</li>
+          </ul>
+        </li>
+        <li><strong>t?ban 項目１</strong>
+          <span class="command-description">ユーザーをサーバーからBAN</span>
+          <ul class="command-description">
+            <li><strong>引数１：</strong>BANするユーザーのメンション</li>
+          </ul>
+        </li>
+        <li><strong>t?unban 項目１</strong>
+          <span class="command-description">過去にBANしたユーザーのBANを解除</span>
+          <ul class="command-description">
+            <li><strong>引数１</strong>BAN解除するユーザーのユーザー名</li>
+          </ul>
+        </li>
       </ul>
     </section>
     <section>
