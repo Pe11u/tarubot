@@ -29,7 +29,7 @@
       list-style-type: none;
       padding-left: 0;
     }
-    fade {
+    .fade {
       font-style: italic;
       opacity: 0.75;
       color: #005bb5;
@@ -63,52 +63,52 @@
     <section>
       <h2>管理コマンド</h2>
       <ul class="command-list">
-        <li><strong>t?kick <fade>項目１</fade> <fade>項目２</fade></strong>
-          <span class="command-description">ユーザーをサーバーからキック<BR><fade>t?kick @taru スパム</fade></span>
+        <li><strong>t?kick <span class="fade">項目１</span> <span class="fade">項目２</span></strong>
+          <span class="command-description">ユーザーをサーバーからキック<BR><span class="fade">t?kick @taru スパム</span></span>
           <ul class="command-description">
             <li><strong>項目１</strong>キックするユーザーのメンション</li>
             <li><strong>項目２</strong>キックする理由</li>
           </ul>
         </li>
-        <li><strong>t?ban <fade>項目１</fade> <fade>項目２</fade></strong>
-          <span class="command-description">ユーザーをサーバーからBAN<BR><fade>t?ban @taru 悪質なスパム</fade></span>
+        <li><strong>t?ban <span class="fade">項目１</span> <span class="fade">項目２</span></strong>
+          <span class="command-description">ユーザーをサーバーからBAN<BR><span class="fade">t?ban @taru 悪質なスパム</span></span>
           <ul class="command-description">
             <li><strong>項目１</strong>BANするユーザーのメンション</li>
             <li><strong>項目２</strong>BANする理由</li>
           </ul>
         </li>
         <li><strong>t?banlist</strong><span class="command-description">過去にBANされたユーザーのIDを確認</span></li>
-        <li><strong>t?unban <fade>項目１</fade></strong>
-          <span class="command-description">過去にBANしたユーザーのBANを解除<BR><fade>t?unban tarutaru_jpn</fade></span>
+        <li><strong>t?unban <span class="fade">項目１</span></strong>
+          <span class="command-description">過去にBANしたユーザーのBANを解除<BR><span class="fade">t?unban tarutaru_jpn</span></span>
           <ul class="command-description">
             <li><strong>項目１</strong>BAN解除するユーザーのユーザー名</li>
           </ul>
         </li>
-        <li><strong>t?timeout <fade>項目１</fade> <fade>項目２</fade> <fade>項目３</fade></strong>
-          <span class="command-description">ユーザーをタイムアウト<BR><fade>t?timeout @taru 1d12h30m 荒らし</fade></span>
+        <li><strong>t?timeout <span class="fade">項目１</span> <span class="fade">項目２</span> <span class="fade">項目３</span></strong>
+          <span class="command-description">ユーザーをタイムアウト<BR><span class="fade">t?timeout @taru 1d12h30m 荒らし</span></span>
           <ul class="command-description">
             <li><strong>項目１</strong>タイムアウトするユーザーのメンション</li>
             <li><strong>項目２</strong>タイムアウトする長さ<BR><BR>d=日, h=時間, m=分<BR>例: 1d12h30m（１日１２時間３０分）</li>
             <li><strong>項目３（任意）</strong>タイムアウトする理由</li>
           </ul>
         </li>
-        <li><strong>t?untimeout <fade>項目１</fade></strong>
+        <li><strong>t?untimeout <span class="fade">項目１</span></strong>
             <span class="command-description">タイムアウト中のユーザーのタイムアウトを解除</span>
             <ul class="command-description">
-              <li><strong>項目１</strong>タイムアウトを解除するユーザーのメンション<BR><fade>t?untimeout @taru</fade></li>
+              <li><strong>項目１</strong>タイムアウトを解除するユーザーのメンション<BR><span class="fade">t?untimeout @taru</span></li>
             </ul>
         </li>
-        <li><strong>t?clear <fade>項目１</fade> <fade>項目２</fade></strong>
-            <span class="command-description">複数のメッセージを一括削除<BR><fade>t?kick 100 @taru</fade></span>
+        <li><strong>t?clear <span class="fade">項目１</span> <span class="fade">項目２</span></strong>
+            <span class="command-description">複数のメッセージを一括削除<BR><span class="fade">t?clear 100 @taru</span></span>
             <ul class="command-description">
               <li><strong>項目１</strong>削除するメッセージの数</li>
               <li><strong>項目２（任意）</strong>削除するメッセージの送信者をメンションでフィルター</li>
             </ul>
         </li>
-        <li><strong>t?nickname <fade>項目１</fade> <fade>項目２</fade> <fade>項目３</fade></strong>
-            <span class="command-description">ユーザーのニックネームを変更<BR><fade>t?nickname set @taru たる</fade></span>
+        <li><strong>t?nickname <span class="fade">項目１</span> <span class="fade">項目２</span> <span class="fade">項目３</span></strong>
+            <span class="command-description">ユーザーのニックネームを変更<BR><span class="fade">t?nickname set @taru たる</span></span>
             <ul class="command-description">
-              <li><strong>項目１</strong>オプション指定の項目です<BR><BR><fade>set:</fade> ニックネームを新しく設定<BR><fade>reset:</fade> ニックネームをリセット</fade></li>
+              <li><strong>項目１</strong>オプション指定の項目です<BR><BR><span class="fade">set:</span> ニックネームを新しく設定<BR><span class="fade">reset:</span> ニックネームをリセット</span></li>
               <li><strong>項目２（条件）</strong>項目１でのオプションがsetの場合、新しく設定するユーザーのメンション</li>
               <li><strong>項目２（条件）</strong>項目１でのオプションがsetの場合、新しく設定するニックネーム</li>
             </ul>
@@ -119,32 +119,32 @@
       <h2>情報コマンド</h2>
       <ul class="command-list">
         <li>
-            <strong>t?info <fade>項目１</fade> <fade>項目２</fade></strong>
-            <span class="command-description">ユーザー、チャンネル、サーバーの情報の表示<BR><fade>t?info user @taru</fade></span>
+            <strong>t?info <span class="fade">項目１</span> <span class="fade">項目２</span></strong>
+            <span class="command-description">ユーザー、チャンネル、サーバーの情報の表示<BR><span class="fade">t?info user @taru</span></span>
             <ul class="command-description">
-                <li><strong>項目１</strong>オプション指定の項目です<BR><BR><fade>user:</fade> ユーザーの情報<BR><fade>channel:</fade> チャンネルの情報</fade><BR><fade>server:</fade> サーバーの情報</li>
+                <li><strong>項目１</strong>オプション指定の項目です<BR><BR><span class="fade">user:</span> ユーザーの情報<BR><span class="fade">channel:</span> チャンネルの情報</span><BR><span class="fade">server:</span> サーバーの情報</li>
                 <li><strong>項目２（条件）</strong>項目１でのオプションがuserの場合、情報を閲覧するユーザーのメンション</li>
             </ul>
         </li>
         <li>
-            <strong>t?icon <fade>項目１</fade> <fade>項目２</fade></strong>
-            <span class="command-description">ユーザー、サーバーのアイコンの表示<BR><fade>t?icon user @taru</fade></span>
+            <strong>t?icon <span class="fade">項目１</span> <span class="fade">項目２</span></strong>
+            <span class="command-description">ユーザー、サーバーのアイコンの表示<BR><span class="fade">t?icon user @taru</span></span>
             <ul class="command-description">
-                <li><strong>項目１</strong>オプション指定の項目です<BR><BR><fade>user:</fade> ユーザーのアイコン<BR><fade>server:</fade> サーバーのアイコン</li>
+                <li><strong>項目１</strong>オプション指定の項目です<BR><BR><span class="fade">user:</span> ユーザーのアイコン<BR><span class="fade">server:</span> サーバーのアイコン</li>
                 <li><strong>項目２（条件）</strong>項目１でのオプションがuserの場合、アイコンを取得するユーザーのメンション</li>
             </ul>
         </li>
         <li>
-            <strong>t?role <fade>項目１</fade> <fade>項目２</fade></strong>
-            <span class="command-description">ユーザーの所属ロールおよびロールに所属しているユーザーを確認<BR><fade>t?info user @taru</fade></span>
+            <strong>t?role <span class="fade">項目１</span> <span class="fade">項目２</span></strong>
+            <span class="command-description">ユーザーの所属ロールおよびロールに所属しているユーザーを確認<BR><span class="fade">t?role check @taru</span></span>
             <ul class="command-description">
-                <li><strong>項目１</strong>オプション指定の項目です<BR><BR><fade>member:</fade> ロールに所属しているユーザー<BR><fade>check:</fade> ユーザーが所属するロール</fade></li>
+                <li><strong>項目１</strong>オプション指定の項目です<BR><BR><span class="fade">member:</span> ロールに所属しているユーザー<BR><span class="fade">check:</span> ユーザーが所属するロール</span></li>
                 <li><strong>項目２（条件）</strong>項目１でのオプションがmemberの場合、確認したいユーザーのメンション<BR>checkの場合、確認したいロールのメンション（多数の人に通知が行きます）</li>
             </ul>
         </li>
     </section>
     <section>
-        <h2>技術コマンド<h2>
+        <h2>技術コマンド</h2>
         <ul class="command-list">
             <li>
                 <strong>t?zishin</strong>
@@ -155,44 +155,44 @@
                 <span class="command-description">最新の列車遅延状況の表示</span>
             </li>
             <li>
-                <strong>t?qr<fade>項目１</fade></strong>
-                <span class="command-description">文字列をQRコードに変換<BR><fade>t?qr たるボット</fade></span>
+                <strong>t?qr<span class="fade">項目１</span></strong>
+                <span class="command-description">文字列をQRコードに変換<BR><span class="fade">t?qr たるボット</span></span>
                 <ul class="command-description">
                     <li><strong>項目１</strong>変換する文字列</li>
                 </ul>
             </li>
             <li>
                 <strong>t?readqr</strong>
-                <span class="command-description">QRコード画像の読み取り<BR><fade>画像を添付して実行</fade></span>
+                <span class="command-description">QRコード画像の読み取り<BR><span class="fade">画像を添付して実行</span></span>
             </li>
             <li>
             <li>
-                <strong>t?forex<fade>項目１ 項目２</fade></strong>
-                <span class="command-description">外貨と日本円の為替の表示<BR><fade>t?forex たるボット</fade></span>
+                <strong>t?forex<span class="fade">項目１ 項目２</span></strong>
+                <span class="command-description">外貨と日本円の為替の表示<BR><span class="fade">t?forex usd 100</span></span>
                 <ul class="command-description">
                     <li><strong>項目１</strong>変換先の通貨コード</li>
                     <li><strong>項目２</strong>日本円での値段</li>
                 </ul>
             </li>
             <li>
-                <strong>t?ipconfig<fade>項目１</fade></strong>
-                <span class="command-description">IPアドレス情報の表示<BR><fade>t?ipconfig 8.8.8.8</fade></span>
+                <strong>t?ipconfig<span class="fade">項目１</span></strong>
+                <span class="command-description">IPアドレス情報の表示<BR><span class="fade">t?ipconfig 8.8.8.8</span></span>
                 <ul class="command-description">
                     <li><strong>項目１</strong>IPv4, IPv6のIPアドレス</li>
                 </ul>
             </li>
-                <strong>t?base64<fade>項目１</fade> <fade>項目２</fade> </strong>
-                <span class="command-description">文字列をBase64に変換（Base32, Base58に置き換えても使用可能）<BR><fade>t?base64 encode たるボット</fade></span>
+                <strong>t?base64<span class="fade">項目１</span> <span class="fade">項目２</span></strong>
+                <span class="command-description">文字列をBase64に変換（Base32, Base58に置き換えても使用可能）<BR><span class="fade">t?base64 encode たるボット</span></span>
                 <ul class="command-description">
-                    <li><strong>項目１</strong>オプション指定の項目です<BR><BR><fade>encode:</fade> 文字列をエンコード（符号化）<BR><fade>decode:</fade> 文字列をデコード（復号）</fade></li>
+                    <li><strong>項目１</strong>オプション指定の項目です<BR><BR><span class="fade">encode:</span> 文字列をエンコード（符号化）<BR><span class="fade">decode:</span> 文字列をデコード（復号）</span></li>
                     <li><strong>項目２</strong>変換する文字列</li>
                 </ul>
             </li>
             <li>
-                <strong>t?percent<fade>項目１</fade> <fade>項目２</fade> </strong>
-                <span class="command-description">文字列をPercentに変換<BR><fade>t?ppercent encode たるボット</fade></span>
+                <strong>t?percent<span class="fade">項目１</span> <span class="fade">項目２</span> </strong>
+                <span class="command-description">文字列をPercentに変換<BR><span class="fade">t?ppercent encode たるボット</span></span>
                 <ul class="command-description">
-                <li><strong>項目１</strong>オプション指定の項目です<BR><BR><fade>encode:</fade> 文字列をエンコード（符号化）<BR><fade>decode:</fade> 文字列をデコード（復号）</fade></li>
+                <li><strong>項目１</strong>オプション指定の項目です<BR><BR><span class="fade">encode:</span> 文字列をエンコード（符号化）<BR><span class="fade">decode:</span> 文字列をデコード（復号）</span></li>
                 <li><strong>項目２</strong>変換する文字列</li>
                 </ul>
             </li>
