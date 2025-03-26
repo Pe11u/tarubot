@@ -28,7 +28,14 @@
     ul {
       list-style-type: none;
       padding-left: 0;
-    }
+		}
+		fade {
+				font-style: italic;
+				opacity: 0.5;
+				color: #005bb5;
+				font-weight: normal;
+				display: inline;
+		}
   </style>
 </head>
 <body>
@@ -56,19 +63,19 @@
     <section>
       <h2>管理コマンド</h2>
       <ul class="command-list">
-        <li><strong>t?kick 項目１</strong>
+        <li><strong>t?kick <fade>項目１</fade></strong>
           <span class="command-description">ユーザーをサーバーからキック</span>
           <ul class="command-description">
             <li><strong>引数１</strong>キックするユーザーのメンション</li>
           </ul>
         </li>
-        <li><strong>t?ban 項目１</strong>
+        <li><strong>t?ban <fade>項目１</fade></strong>
           <span class="command-description">ユーザーをサーバーからBAN</span>
           <ul class="command-description">
-            <li><strong>引数１：</strong>BANするユーザーのメンション</li>
+            <li><strong>引数１</strong>BANするユーザーのメンション</li>
           </ul>
         </li>
-        <li><strong>t?unban 項目１</strong>
+        <li><strong>t?unban <fade>項目１</fade></strong>
           <span class="command-description">過去にBANしたユーザーのBANを解除</span>
           <ul class="command-description">
             <li><strong>引数１</strong>BAN解除するユーザーのユーザー名</li>
@@ -78,7 +85,7 @@
           <span class="command-description">過去にBANしたユーザーのBANを解除</span>
           <ul class="command-description">
             <li><strong>引数１</strong>タイムアウトするユーザーのメンション</li>
-            <li><strong>引数２</strong>タイムアウトする長さ<BR><strong>指定方法:</strong>d=日, h=時間, m=分</li>
+            <li><strong>引数２</strong>タイムアウトする長さ<BR><strong>指定方法:</strong>d=日, h=時間, m=分<BR>例: 1d12h30m（１日１２時間３０分）</li>
             <li><strong>引数３（任意）</strong>タイムアウトする理由</li>
           </ul>
         </li>
