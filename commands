@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>たるボット - コマンド一覧</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header>
+    <h1>たるボット コマンド一覧</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="commands.html">コマンド一覧</a></li>
+        <li><a href="terms_of_service.html">利用規約</a></li>
+        <li><a href="privacy_policy.html">プライバシーポリシー</a></li>
+        <li><a href="https://github.com/pe11u" target="_blank">GitHub</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2>基本コマンド</h2>
+      <ul>
+        <li><strong>t?help</strong> - 利用可能なコマンドの一覧を表示</li>
+        <li><strong>t?info</strong> - ボットの情報を表示</li>
+        <li><strong>t?ping</strong> - ボットの応答速度を確認</li>
+      </ul>
+    </section>
+    <section>
+      <h2>管理コマンド</h2>
+      <ul>
+        <li><strong>t?kick @ユーザー</strong> - 指定したユーザーをキック</li>
+        <li><strong>t?ban @ユーザー</strong> - 指定したユーザーをBAN</li>
+        <li><strong>t?mute @ユーザー</strong> - 指定したユーザーをミュート</li>
+      </ul>
+    </section>
+    <section>
+      <h2>その他のコマンド</h2>
+      <ul>
+        <li><strong>t?avatar @ユーザー</strong> - 指定したユーザーのアバターを表示</li>
+        <li><strong>t?serverinfo</strong> - サーバーの情報を表示</li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 たるボット運営 | <a href="terms_of_service.html">利用規約</a> | <a href="privacy_policy.html">プライバシーポリシー</a></p>
+  </footer>
+</body>
+</html>
