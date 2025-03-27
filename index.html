@@ -7,10 +7,19 @@
   <link rel="stylesheet" href="assets/styles.css">
   <link rel="icon" href="assets/logo.png" />
   <style>
+    @font-face {
+      font-family: 'Uzura';
+      src: url('assets/uzura.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    .specialfont {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
     body {
       background: linear-gradient(135deg, #87CEFA, #DDA0DD);
       color: #005bb5;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Uzura', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
       line-height: 1.6;
@@ -110,7 +119,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 たるボット運営 | <a href="terms_of_service.html">利用規約</a> | <a href="privacy_policy.html">プライバシーポリシー</a></p>
+    <p class="specialfont">&copy;</p><p> 2025 たるボット運営 | <a href="terms_of_service.html">利用規約</a> | <a href="privacy_policy.html">プライバシーポリシー</a></p>
   </footer>
 </body>
 </html>
