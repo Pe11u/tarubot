@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-<link rel="icon" href="assets/logo.png" />
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,6 +44,7 @@
     <nav>
       <ul>
         <li><a href="index.html">ホーム</a></li>
+        <li><a href="commands.html">コマンド一覧</a></li>
         <li><a href="terms_of_service.html">利用規約</a></li>
         <li><a href="privacy_policy.html">プライバシーポリシー</a></li>
         <li><a href="https://github.com/pe11u" target="_blank">GitHub</a></li>
@@ -55,8 +55,8 @@
     <section>
       <h2>基本コマンド</h2>
       <ul class="command-list">
-        <li><strong>t?help</strong><span class="command-description">利用可能なコマンドの一覧の表示</span></li>
-        <li><strong>t?tarubot</strong><span class="command-description">ボットの情報の表示</span></li>
+        <li><strong>t?help</strong><span class="command-description">利用可能なコマンドの一覧を表示</span></li>
+        <li><strong>t?tarubot</strong><span class="command-description">ボットの情報を表示</span></li>
         <li><strong>t?ping</strong><span class="command-description">ボットの応答速度（レイテンシ）を確認</span></li>
       </ul>
     </section>
@@ -113,6 +113,20 @@
               <li><strong>項目２（条件）</strong>項目１でのオプションがsetの場合、新しく設定するニックネーム</li>
             </ul>
         </li>
+        <li><strong>t?say <span class="fade">項目１</span></strong>
+            <span class="command-description">ボットとしてメッセージを送信<span class="fade">t?say たるボット</span></span>
+            <ul class="command-description">
+              <li><strong>項目１</strong>メッセージ内容<BR></li>
+            </ul>
+        </li>
+        <li><strong>t?intent <span class="fade">項目１ 項目２ 項目３</span></strong>
+            <span class="command-description">ボットとして埋め込みメッセージを送信<span class="fade">t?intent お知らせ たるボット green</span></span>
+            <ul class="command-description">
+              <li><strong>項目１</strong>タイトル<BR><span class="fade">空白が含まれる場合は''または""で囲う</span></li>
+              <li><strong>項目２</strong>デスクリプション（内容）<BR><span class="fade">空白が含まれる場合は''または""で囲う</span></li>
+              <li><strong>項目３（任意）</strong>メッセージの色<BR><span class="fade">HEXカラーコードまたは英語</span></li>
+            </ul>
+        </li>
       </ul>
     </section>
     <section>
@@ -120,7 +134,7 @@
       <ul class="command-list">
         <li>
             <strong>t?info <span class="fade">項目１</span> <span class="fade">項目２</span></strong>
-            <span class="command-description">ユーザー、チャンネル、サーバーの情報の表示<BR><span class="fade">t?info user @taru</span></span>
+            <span class="command-description">ユーザー、チャンネル、サーバーの情報を表示<BR><span class="fade">t?info user @taru</span></span>
             <ul class="command-description">
                 <li><strong>項目１</strong>オプション指定の項目です<BR><BR><span class="fade">user:</span> ユーザーの情報<BR><span class="fade">channel:</span> チャンネルの情報</span><BR><span class="fade">server:</span> サーバーの情報</li>
                 <li><strong>項目２（条件）</strong>項目１でのオプションがuserの場合、情報を閲覧するユーザーのメンション</li>
@@ -128,7 +142,7 @@
         </li>
         <li>
             <strong>t?icon <span class="fade">項目１</span> <span class="fade">項目２</span></strong>
-            <span class="command-description">ユーザー、サーバーのアイコンの表示<BR><span class="fade">t?icon user @taru</span></span>
+            <span class="command-description">ユーザー、サーバーのアイコンを表示<BR><span class="fade">t?icon user @taru</span></span>
             <ul class="command-description">
                 <li><strong>項目１</strong>オプション指定の項目です<BR><BR><span class="fade">user:</span> ユーザーのアイコン<BR><span class="fade">server:</span> サーバーのアイコン</li>
                 <li><strong>項目２（条件）</strong>項目１でのオプションがuserの場合、アイコンを取得するユーザーのメンション</li>
@@ -148,14 +162,14 @@
         <ul class="command-list">
             <li>
                 <strong>t?zishin</strong>
-                <span class="command-description">最新の日本での地震・津波情報の表示<BR>t?eq, t?earthquakeでも使用可能</span>
+                <span class="command-description">最新の日本での地震・津波情報を表示<BR>t?eq, t?earthquakeでも使用可能</span>
             </li>
             <li>
                 <strong>t?train</strong>
-                <span class="command-description">最新の列車遅延状況の表示</span>
+                <span class="command-description">最新の列車遅延状況を表示</span>
             </li>
             <li>
-                <strong>t?qr<span class="fade">項目１</span></strong>
+                <strong>t?qr <span class="fade">項目１</span></strong>
                 <span class="command-description">文字列をQRコードに変換<BR><span class="fade">t?qr たるボット</span></span>
                 <ul class="command-description">
                     <li><strong>項目１</strong>変換する文字列</li>
@@ -167,21 +181,21 @@
             </li>
             <li>
             <li>
-                <strong>t?forex<span class="fade">項目１ 項目２</span></strong>
-                <span class="command-description">外貨と日本円の為替の表示<BR><span class="fade">t?forex usd 100</span></span>
+                <strong>t?forex <span class="fade">項目１ 項目２</span></strong>
+                <span class="command-description">外貨と日本円の為替を表示<BR><span class="fade">t?forex usd 100</span></span>
                 <ul class="command-description">
                     <li><strong>項目１</strong>変換先の通貨コード</li>
                     <li><strong>項目２</strong>日本円での値段</li>
                 </ul>
             </li>
             <li>
-                <strong>t?ipconfig<span class="fade">項目１</span></strong>
-                <span class="command-description">IPアドレス情報の表示<BR><span class="fade">t?ipconfig 8.8.8.8</span></span>
+                <strong>t?ipconfig <span class="fade">項目１</span></strong>
+                <span class="command-description">IPアドレス情報を表示<BR><span class="fade">t?ipconfig 8.8.8.8</span></span>
                 <ul class="command-description">
                     <li><strong>項目１</strong>IPv4, IPv6のIPアドレス</li>
                 </ul>
             </li>
-                <strong>t?base64<span class="fade">項目１</span> <span class="fade">項目２</span></strong>
+                <strong>t?base64 <span class="fade">項目１</span> <span class="fade">項目２</span></strong>
                 <span class="command-description">文字列をBase64に変換（Base32, Base58に置き換えても使用可能）<BR><span class="fade">t?base64 encode たるボット</span></span>
                 <ul class="command-description">
                     <li><strong>項目１</strong>オプション指定の項目です<BR><BR><span class="fade">encode:</span> 文字列をエンコード（符号化）<BR><span class="fade">decode:</span> 文字列をデコード（復号）</span></li>
@@ -189,15 +203,114 @@
                 </ul>
             </li>
             <li>
-                <strong>t?percent<span class="fade">項目１</span> <span class="fade">項目２</span> </strong>
+                <strong>t?percent <span class="fade">項目１</span> <span class="fade">項目２</span> </strong>
                 <span class="command-description">文字列をPercentに変換<BR><span class="fade">t?ppercent encode たるボット</span></span>
                 <ul class="command-description">
-                <li><strong>項目１</strong>オプション指定の項目です<BR><BR><span class="fade">encode:</span> 文字列をエンコード（符号化）<BR><span class="fade">decode:</span> 文字列をデコード（復号）</span></li>
-                <li><strong>項目２</strong>変換する文字列</li>
+                    <li><strong>項目１</strong>オプション指定の項目です<BR><BR><span class="fade">encode:</span> 文字列をエンコード（符号化）<BR><span class="fade">decode:</span> 文字列をデコード（復号）</span></li>
+                    <li><strong>項目２</strong>変換する文字列</li>
                 </ul>
             </li>
         </ul>
     </section>
+    <section>
+        <h2>VCコマンド</h2>
+        <ul class="command-list">
+            <li>
+                <strong>t?play <span class="fade">項目１</span></strong>
+                <span class="command-description">YouTube動画音声を再生<BR><span class="fade">t?play https://www.youtube.com/watch?v=dQw4w9WgXcQ</span></span>
+                <ul class="command-description">
+                    <li><strong>項目１</strong>YouTube動画のリンク</li>
+                </ul> 
+            </li>
+            <li>
+                <strong>t?skip</strong>
+                <span class="command-description">現在流れている曲をスキップ</span>
+            </li>
+            <li>
+                <strong>t?leave</strong>
+                <span class="command-description">ボイスチャットから退出<BR>強制退出させられるとボットが再起動するまで同じサーバーで使えなくなります</span>
+            </li>
+    </section>
+    <section>
+        <h2>経済コマンド</h2>
+        <ul class="command-list">
+            <li>
+                <strong>t?work</strong>
+                <span class="command-description">働いて報酬を得る</span>
+            </li>
+            <li>
+                <strong>t?crime</strong>
+                <span class="command-description">犯罪を侵して報酬を得るか、罰金を支払う</span>
+            </li>
+            <li>
+                <strong>t?balance</strong>
+                <span class="command-description">現在の所持金を表示</span>
+            </li>
+            <li>
+                <strong>t?leaderboard <span class="fade">項目１</span></strong>
+                <span class="command-description">サーバー内・ボット全体の所持金ランキングを表示<BR><span class="fade">t?leaderboard local</span></span>
+                <ul class="command-description">
+                    <li><strong>項目１</strong>オプション指定の項目です<BR><BR><span class="fade">local:</span> サーバー内ランキング<BR><span class="fade">global:</span> ボット全体ランキング</span></li>
+                </ul> 
+            </li>
+            <li>
+                <strong>t?give <span class="fade">項目１ 項目２</span></strong>
+                <span class="command-description">他ユーザーにお金を送金<BR><span class="fade">t?give @taru 5000</span></span>
+                <ul class="command-description">
+                    <li><strong>項目１</strong>送金するユーザーのメンションまたはユーザー名</li>
+                    <li><strong>項目２</strong>送金する金額<BR><span class="fade">allと入力して所持金全てを指定可能</span></li>
+                </ul> 
+            </li>
+            <li>
+                <strong>t?blackjack <span class="fade">項目１</span></strong>
+                <span class="command-description">ボットとブラックジャックを遊ぶ<BR><span class="fade">t?blackjack 5000</span></span>
+                <ul class="command-description">
+                    <li><strong>項目１</strong>賭ける金額<BR><span class="fade">allと入力して所持金全てを指定可能</span></li>
+                </ul> 
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h2>その他</h2>
+        <ul class="command-list">
+            <li>
+                <strong>t?dice <span class="fade">項目１ 項目２</span></strong>
+                <span class="command-description">サイコロを回す<BR><span class="fade">t?dice 1d100 int</span></span>
+                <ul class="command-description">
+                    <li><strong>項目１</strong>サイコロの面と回す回数の指定<BR><span class="fade">サイコロの面d回す回数</span></li>
+                    <li><strong>項目２（任意）</strong>オプション指定の項目です<BR><BR><span class="fade">int:</span> 結果を全て整数値にする<BR><span class="fade">float:</span> 結果をすべて小数点第5位を四捨五入した浮動小数点数（小数）にする</span></li>
+                </ul>
+            </li>
+            <li>
+                <strong>t?coinflip</strong>
+                <span class="command-description">コインを投げる</span>
+            </li>
+            <li>
+                <strong>t?janken</strong>
+                <span class="command-description">ボットとじゃんけんを遊ぶ</span>
+            </li>
+            <li>
+                <strong>t?today</strong>
+                <span class="command-description">今日が何の日か表示する</span>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h2>ジョークコマンド</h2>
+        <span class="command-list">
+            <li>
+                <strong>t?fart</strong>
+                <span class="command-description">VCに参加しておならする</span>
+            </li>
+            <li>
+                <strong>t?kill <span class="fade">項目１ 項目２</span></strong>
+                <span class="command-description">ユーザーを殺す<BR><span class="fade">t?kill @taru thunder</span></span>
+                <ul class="command-description">
+                    <li><strong>項目１</strong>殺すユーザーのメンション</li>
+                    <li><strong>項目２（任意）</strong>オプション指定の項目です<BR><BR><span class="fade">shoot, drowned, explode, fall, burn, lava, thunder, magic, froze, attack</span></li>
+                </ul>
+            </li>
+        </span>
   </main>
   <footer>
     <p>&copy; 2025 たるボット運営 | <a href="terms_of_service.html">利用規約</a> | <a href="privacy_policy.html">プライバシーポリシー</a></p>
