@@ -485,7 +485,7 @@
     <p><span class="specialfont">©</span> 2025 たるボット運営 | <a href="terms_of_service.html">利用規約</a> | <a href="privacy_policy.html">プライバシーポリシー</a></p>
   </footer>
   <script>
-    document.getElementById('search-bar').addEventListener('input', function() {
+    document.getElementById('searchInput').addEventListener('input', function() {
         const query = this.value.toLowerCase();
         document.querySelectorAll('.command-list li').forEach(li => {
             const keywords = li.getAttribute('data-keywords')?.toLowerCase() || '';
