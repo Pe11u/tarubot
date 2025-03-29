@@ -6,7 +6,6 @@
   <title>コマンド一覧</title>
   <link rel="stylesheet" href="assets/styles.css">
   <link rel="icon" href="assets/logo.png" />
-  
   <style>
     @font-face {
       font-family: 'Uzura';
@@ -25,17 +24,51 @@
       padding: 0;
       line-height: 1.6;
     }
+    #search-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    #searchInput {
+      padding: 8px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+    }
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    nav ul li {
+      display: inline;
+      margin: 0 10px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
     main {
-      max-width: 960px;
+      max-width: 1200px;
       margin: 2rem auto;
       padding: 1rem;
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.4);
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-    section {
-      margin-bottom: 2rem;
-      padding: 1rem;
+      margin-right: 320px;
     }
     h2 {
       border-bottom: 2px solid #ff6f61;
@@ -85,14 +118,6 @@
       border-radius: 8px;
       box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     }
-    main {
-      max-width: 1200px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background: rgba(255, 255, 255, 0.4);
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
     strong {
       display: block;
       font-size: 1.2em;
@@ -117,9 +142,31 @@
       font-weight: normal;
       display: inline;
     }
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+    footer p {
+      margin: 0;
+    }
+    footer a {
+      color: #1e90ff;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
+  <div id="search-container">
+    <input type="text" id="searchInput" placeholder="Search commands...">
+  </div>
   <header>
     <h1>たるボット コマンド一覧</h1>
     <nav>
@@ -134,266 +181,304 @@
     <section>
       <h2>基本コマンド</h2>
       <ul class="command-list">
-        <li><strong>t?help</strong><span class="command-description">利用可能なコマンドの一覧を表示</span></li>
-        <li><strong>t?tarubot</strong><span class="command-description">ボットの情報を表示</span></li>
-        <li><strong>t?ping</strong><span class="command-description">ボットの応答速度（レイテンシ）を確認</span></li>
+        <li data-keywords="help,一覧,コマンド,使い方">
+          <strong>t?help</strong>
+          <span class="command-description">利用可能なコマンドの一覧を表示</span>
+        </li>
+        <li data-keywords="tarubot,情報,ボット,詳細,インフォメーション">
+          <strong>t?tarubot</strong>
+          <span class="command-description">ボットの情報を表示</span>
+        </li>
+        <li data-keywords="ping,レイテンシ,応答,速度">
+          <strong>t?ping</strong>
+          <span class="command-description">ボットの応答速度（レイテンシ）を確認</span>
+        </li>
       </ul>
     </section>
     <section>
       <h2>管理コマンド</h2>
       <ul class="command-list">
-        <li><strong>t?kick <span class="fade">項目１</span> <span class="fade">項目２</span></strong>
-          <span class="command-description">ユーザーをサーバーからキック<BR><span class="fade">t?kick @taru スパム</span></span>
+        <li data-keywords="kick,キック,ユーザー,削除,追放">
+          <strong>t?kick <span class="fade">項目１</span> <span class="fade">項目２</span></strong>
+          <span class="command-description">ユーザーをサーバーからキック<br><span class="fade">t?kick @taru スパム</span></span>
           <ul class="command-description">
             <li><strong>項目１</strong>キックするユーザーのメンション</li>
             <li><strong>項目２</strong>キックする理由</li>
           </ul>
         </li>
-        <li><strong>t?ban <span class="fade">項目１</span> <span class="fade">項目２</span></strong>
-          <span class="command-description">ユーザーをサーバーからBAN<BR><span class="fade">t?ban @taru 悪質なスパム</span></span>
+        <li data-keywords="ban,BAN,禁止">
+          <strong>t?ban <span class="fade">項目１</span> <span class="fade">項目２</span></strong>
+          <span class="command-description">ユーザーをサーバーからBAN<br><span class="fade">t?ban @taru 悪質なスパム</span></span>
           <ul class="command-description">
             <li><strong>項目１</strong>BANするユーザーのメンション</li>
             <li><strong>項目２</strong>BANする理由</li>
           </ul>
         </li>
-        <li><strong>t?banlist</strong><span class="command-description">過去にBANされたユーザーのIDを確認</span></li>
-        <li><strong>t?unban <span class="fade">項目１</span></strong>
-          <span class="command-description">過去にBANしたユーザーのBANを解除<BR><span class="fade">t?unban tarutaru_jpn</span></span>
+        <li data-keywords="banlist,BAN,一覧">
+          <strong>t?banlist</strong>
+          <span class="command-description">過去にBANされたユーザーのIDを確認</span>
+        </li>
+        <li data-keywords="unban,解除,BAN,アンロック,アンバン">
+          <strong>t?unban <span class="fade">項目１</span></strong>
+          <span class="command-description">過去にBANしたユーザーのBANを解除<br><span class="fade">t?unban tarutaru_jpn</span></span>
           <ul class="command-description">
             <li><strong>項目１</strong>BAN解除するユーザーのユーザー名</li>
           </ul>
         </li>
-        <li><strong>t?timeout <span class="fade">項目１</span> <span class="fade">項目２</span> <span class="fade">項目３</span></strong>
-          <span class="command-description">ユーザーをタイムアウト<BR><span class="fade">t?timeout @taru 1d12h30m 荒らし</span></span>
+        <li data-keywords="timeout,タイムアウト,ユーザー,制限,時間">
+          <strong>t?timeout <span class="fade">項目１</span> <span class="fade">項目２</span> <span class="fade">項目３</span></strong>
+          <span class="command-description">ユーザーをタイムアウト<br><span class="fade">t?timeout @taru 1d12h30m 荒らし</span></span>
           <ul class="command-description">
             <li><strong>項目１</strong>タイムアウトするユーザーのメンション</li>
-            <li><strong>項目２</strong>タイムアウトする長さ<BR><BR>d=日, h=時間, m=分<BR>例: 1d12h30m（１日１２時間３０分）</li>
+            <li><strong>項目２</strong>タイムアウトする長さ (d=日, h=時間, m=分)</li>
             <li><strong>項目３（任意）</strong>タイムアウトする理由</li>
           </ul>
         </li>
-        <li><strong>t?untimeout <span class="fade">項目１</span></strong>
-            <span class="command-description">タイムアウト中のユーザーのタイムアウトを解除</span>
-            <ul class="command-description">
-              <li><strong>項目１</strong>タイムアウトを解除するユーザーのメンション<BR><span class="fade">t?untimeout @taru</span></li>
-            </ul>
+        <li data-keywords="untimeout,解除,タイムアウト,アンロック,アンタイムアウト">
+          <strong>t?untimeout <span class="fade">項目１</span></strong>
+          <span class="command-description">タイムアウト中のユーザーのタイムアウトを解除</span>
+          <ul class="command-description">
+            <li><strong>項目１</strong>タイムアウトを解除するユーザーのメンション<br><span class="fade">t?untimeout @taru</span></li>
+          </ul>
         </li>
-        <li><strong>t?clear <span class="fade">項目１</span> <span class="fade">項目２</span></strong>
-            <span class="command-description">複数のメッセージを一括削除<BR><span class="fade">t?clear 100 @taru</span></span>
-            <ul class="command-description">
-              <li><strong>項目１</strong>削除するメッセージの数</li>
-              <li><strong>項目２（任意）</strong>削除するメッセージの送信者をメンションでフィルター</li>
-            </ul>
+        <li data-keywords="clear,メッセージ,削除,一括">
+          <strong>t?clear <span class="fade">項目１</span> <span class="fade">項目２</span></strong>
+          <span class="command-description">複数のメッセージを一括削除<br><span class="fade">t?clear 100 @taru</span></span>
+          <ul class="command-description">
+            <li><strong>項目１</strong>削除するメッセージの数</li>
+            <li><strong>項目２（任意）</strong>削除するメッセージの送信者をメンションでフィルター</li>
+          </ul>
         </li>
-        <li><strong>t?nickname <span class="fade">項目１</span> <span class="fade">項目２</span> <span class="fade">項目３</span></strong>
-            <span class="command-description">ユーザーのニックネームを変更<BR><span class="fade">t?nickname set @taru たる</span></span>
-            <ul class="command-description">
-              <li><strong>項目１</strong>オプション指定の項目です<BR><BR><span class="fade">set:</span> ニックネームを新しく設定<BR><span class="fade">reset:</span> ニックネームをリセット</span></li>
-              <li><strong>項目２（条件）</strong>項目１でのオプションがsetの場合、新しく設定するユーザーのメンション</li>
-              <li><strong>項目２（条件）</strong>項目１でのオプションがsetの場合、新しく設定するニックネーム</li>
-            </ul>
+        <li data-keywords="nickname,ニックネーム,変更,名前,表示名">
+          <strong>t?nickname <span class="fade">項目１</span> <span class="fade">項目２</span> <span class="fade">項目３</span></strong>
+          <span class="command-description">ユーザーのニックネームを変更<br><span class="fade">t?nickname set @taru たる</span></span>
+          <ul class="command-description">
+            <li><strong>項目１</strong>オプション指定 (set: 新規, reset: リセット)</li>
+            <li><strong>項目２（条件）</strong>setの場合、変更するユーザーのメンション</li>
+            <li><strong>項目３（条件）</strong>setの場合、新しいニックネーム</li>
+          </ul>
         </li>
-        <li><strong>t?say <span class="fade">項目１</span></strong>
-            <span class="command-description">ボットとしてメッセージを送信<BR><span class="fade">t?say たるボット</span></span>
-            <ul class="command-description">
-              <li><strong>項目１</strong>メッセージ内容<BR></li>
-            </ul>
+        <li data-keywords="say,メッセージ,送信,ボットとして">
+          <strong>t?say <span class="fade">項目１</span></strong>
+          <span class="command-description">ボットとしてメッセージを送信<br><span class="fade">t?say たるボット</span></span>
+          <ul class="command-description">
+            <li><strong>項目１</strong>送信するメッセージ内容</li>
+          </ul>
         </li>
-        <li><strong>t?intent <span class="fade">項目１ 項目２ 項目３</span></strong>
-            <span class="command-description">ボットとして埋め込みメッセージを送信<BR><span class="fade">t?intent お知らせ たるボット green</span></span>
-            <ul class="command-description">
-              <li><strong>項目１</strong>タイトル<BR><span class="fade">空白が含まれる場合は''または""で囲う</span></li>
-              <li><strong>項目２</strong>デスクリプション（内容）<BR><span class="fade">空白が含まれる場合は''または""で囲う</span></li>
-              <li><strong>項目３（任意）</strong>メッセージの色<BR><span class="fade">HEXカラーコードまたは英語</span></li>
-            </ul>
+        <li data-keywords="intent,埋め込み,メッセージ,送信,ボットとして">
+          <strong>t?intent <span class="fade">項目１ 項目２ 項目３</span></strong>
+          <span class="command-description">ボットとして埋め込みメッセージを送信<br><span class="fade">t?intent お知らせ たるボット green</span></span>
+          <ul class="command-description">
+            <li><strong>項目１</strong>タイトル (空白は''または\"\")</li>
+            <li><strong>項目２</strong>内容 (空白は''または\"\")</li>
+            <li><strong>項目３（任意）</strong>メッセージの色 (HEXまたは英語名)</li>
+          </ul>
         </li>
       </ul>
     </section>
     <section>
       <h2>情報コマンド</h2>
       <ul class="command-list">
-        <li>
-            <strong>t?info <span class="fade">項目１</span> <span class="fade">項目２</span></strong>
-            <span class="command-description">ユーザー、チャンネル、サーバーの情報を表示<BR><span class="fade">t?info user @taru</span></span>
-            <ul class="command-description">
-                <li><strong>項目１</strong>オプション指定の項目です<BR><BR><span class="fade">user:</span> ユーザーの情報<BR><span class="fade">channel:</span> チャンネルの情報</span><BR><span class="fade">server:</span> サーバーの情報</li>
-                <li><strong>項目２（条件）</strong>項目１でのオプションがuserの場合、情報を閲覧するユーザーのメンション</li>
-            </ul>
+        <li data-keywords="info,情報,ユーザー,サーバー,チャンネル">
+          <strong>t?info <span class="fade">項目１</span> <span class="fade">項目２</span></strong>
+          <span class="command-description">ユーザー、チャンネル、サーバーの情報を表示<br><span class="fade">t?info user @taru</span></span>
+          <ul class="command-description">
+            <li><strong>項目１</strong>オプション (user, channel, server)</li>
+            <li><strong>項目２（条件）</strong>userの場合、対象ユーザーのメンション</li>
+          </ul>
         </li>
-        <li>
-            <strong>t?icon <span class="fade">項目１</span> <span class="fade">項目２</span></strong>
-            <span class="command-description">ユーザー、サーバーのアイコンを表示<BR><span class="fade">t?icon user @taru</span></span>
-            <ul class="command-description">
-                <li><strong>項目１</strong>オプション指定の項目です<BR><BR><span class="fade">user:</span> ユーザーのアイコン<BR><span class="fade">server:</span> サーバーのアイコン</li>
-                <li><strong>項目２（条件）</strong>項目１でのオプションがuserの場合、アイコンを取得するユーザーのメンション</li>
-            </ul>
+        <li data-keywords="icon,アイコン,表示,画像">
+          <strong>t?icon <span class="fade">項目１</span> <span class="fade">項目２</span></strong>
+          <span class="command-description">ユーザー、サーバーのアイコンを表示<br><span class="fade">t?icon user @taru</span></span>
+          <ul class="command-description">
+            <li><strong>項目１</strong>オプション (user, server)</li>
+            <li><strong>項目２（条件）</strong>userの場合、対象ユーザーのメンション</li>
+          </ul>
         </li>
-        <li>
-            <strong>t?role <span class="fade">項目１</span> <span class="fade">項目２</span></strong>
-            <span class="command-description">ユーザーの所属ロールおよびロールに所属しているユーザーを確認<BR><span class="fade">t?role check @taru</span></span>
-            <ul class="command-description">
-                <li><strong>項目１</strong>オプション指定の項目です<BR><BR><span class="fade">member:</span> ロールに所属しているユーザー<BR><span class="fade">check:</span> ユーザーが所属するロール</span></li>
-                <li><strong>項目２（条件）</strong>項目１でのオプションがmemberの場合、確認したいユーザーのメンション<BR>checkの場合、確認したいロールのメンション（多数の人に通知が行きます）</li>
-            </ul>
+        <li data-keywords="role,ロール,所属,確認,役職">
+          <strong>t?role <span class="fade">項目１</span> <span class="fade">項目２</span></strong>
+          <span class="command-description">ユーザーの所属ロールおよびロール内のユーザーを確認<br><span class="fade">t?role check @taru</span></span>
+          <ul class="command-description">
+            <li><strong>項目１</strong>オプション (member, check)</li>
+            <li><strong>項目２（条件）</strong>memberの場合、対象ユーザー、checkの場合、対象ロール</li>
+          </ul>
         </li>
+      </ul>
     </section>
     <section>
-        <h2>技術コマンド</h2>
-        <ul class="command-list">
-            <li>
-                <strong>t?zishin</strong>
-                <span class="command-description">最新の日本での地震・津波情報を表示<BR>t?eq, t?earthquakeでも使用可能</span>
-            </li>
-            <li>
-                <strong>t?train</strong>
-                <span class="command-description">最新の列車遅延状況を表示</span>
-            </li>
-            <li>
-                <strong>t?qr <span class="fade">項目１</span></strong>
-                <span class="command-description">文字列をQRコードに変換<BR><span class="fade">t?qr たるボット</span></span>
-                <ul class="command-description">
-                    <li><strong>項目１</strong>変換する文字列</li>
-                </ul>
-            </li>
-            <li>
-                <strong>t?readqr</strong>
-                <span class="command-description">QRコード画像の読み取り<BR><span class="fade">画像を添付して実行</span></span>
-            </li>
-            <li>
-                <strong>t?forex <span class="fade">項目１ 項目２</span></strong>
-                <span class="command-description">外貨と日本円の為替を表示<BR><span class="fade">t?forex usd 100</span></span>
-                <ul class="command-description">
-                    <li><strong>項目１</strong>変換先の通貨コード</li>
-                    <li><strong>項目２</strong>日本円での値段</li>
-                </ul>
-            </li>
-            <li>
-                <strong>t?ipconfig <span class="fade">項目１</span></strong>
-                <span class="command-description">IPアドレス情報を表示<BR><span class="fade">t?ipconfig 8.8.8.8</span></span>
-                <ul class="command-description">
-                    <li><strong>項目１</strong>IPv4, IPv6のIPアドレス</li>
-                </ul>
-            </li>
-            <li>
-                <strong>t?base64 <span class="fade">項目１</span> <span class="fade">項目２</span></strong>
-                <span class="command-description">文字列をBase64に変換（Base32, Base58に置き換えても使用可能）<BR><span class="fade">t?base64 encode たるボット</span></span>
-                <ul class="command-description">
-                    <li><strong>項目１</strong>オプション指定の項目です<BR><BR><span class="fade">encode:</span> 文字列をエンコード（符号化）<BR><span class="fade">decode:</span> 文字列をデコード（復号）</span></li>
-                    <li><strong>項目２</strong>変換する文字列</li>
-                </ul>
-            </li>
-            <li>
-                <strong>t?percent <span class="fade">項目１</span> <span class="fade">項目２</span> </strong>
-                <span class="command-description">文字列をPercentに変換<BR><span class="fade">t?ppercent encode たるボット</span></span>
-                <ul class="command-description">
-                    <li><strong>項目１</strong>オプション指定の項目です<BR><BR><span class="fade">encode:</span> 文字列をエンコード（符号化）<BR><span class="fade">decode:</span> 文字列をデコード（復号）</span></li>
-                    <li><strong>項目２</strong>変換する文字列</li>
-                </ul>
-            </li>
-        </ul>
+      <h2>技術コマンド</h2>
+      <ul class="command-list">
+        <li data-keywords="zishin,eq,earthquake,地震,津波,情報">
+          <strong>t?zishin</strong>
+          <span class="command-description">最新の日本での地震・津波情報を表示 (t?eq, t?earthquakeでも可)</span>
+        </li>
+        <li data-keywords="train,列車,遅延,電車,地下鉄,鉄道">
+          <strong>t?train</strong>
+          <span class="command-description">最新の列車遅延状況を表示</span>
+        </li>
+        <li data-keywords="qr,QRコード,変換">
+          <strong>t?qr <span class="fade">項目１</span></strong>
+          <span class="command-description">文字列をQRコードに変換<br><span class="fade">t?qr たるボット</span></span>
+          <ul class="command-description">
+            <li><strong>項目１</strong>変換する文字列</li>
+          </ul>
+        </li>
+        <li data-keywords="readqr,qr,QRコード,読み取り">
+          <strong>t?readqr</strong>
+          <span class="command-description">QRコード画像の読み取り (画像を添付して実行)</span>
+        </li>
+        <li data-keywords="forex,為替,外貨,日本円,円">
+          <strong>t?forex <span class="fade">項目１ 項目２</span></strong>
+          <span class="command-description">外貨と日本円の為替を表示<br><span class="fade">t?forex usd 100</span></span>
+          <ul class="command-description">
+            <li><strong>項目１</strong>変換先の通貨コード</li>
+            <li><strong>項目２</strong>日本円の金額</li>
+          </ul>
+        </li>
+        <li data-keywords="ipconfig,IP,アドレス">
+          <strong>t?ipconfig <span class="fade">項目１</span></strong>
+          <span class="command-description">IPアドレス情報を表示<br><span class="fade">t?ipconfig 8.8.8.8</span></span>
+          <ul class="command-description">
+            <li><strong>項目１</strong>IPv4またはIPv6のIPアドレス</li>
+          </ul>
+        </li>
+        <li data-keywords="base64,Base64,encode,decode,変換,文字列,エンコード,デコード">
+          <strong>t?base64 <span class="fade">項目１</span> <span class="fade">項目２</span></strong>
+          <span class="command-description">文字列をBase64に変換 (Base32, Base58にも対応)<br><span class="fade">t?base64 encode たるボット</span></span>
+          <ul class="command-description">
+            <li><strong>項目１</strong>オプション (encode: 符号化, decode: 復号)</li>
+            <li><strong>項目２</strong>変換する文字列</li>
+          </ul>
+        </li>
+        <li data-keywords="percent,Percent,encode,decode,変換,文字列,エンコード,デコード">
+          <strong>t?percent <span class="fade">項目１</span> <span class="fade">項目２</span></strong>
+          <span class="command-description">文字列をPercentに変換<br><span class="fade">t?ppercent encode たるボット</span></span>
+          <ul class="command-description">
+            <li><strong>項目１</strong>オプション (encode: 符号化, decode: 復号)</li>
+            <li><strong>項目２</strong>変換する文字列</li>
+          </ul>
+        </li>
+      </ul>
     </section>
     <section>
-        <h2>VCコマンド</h2>
-        <ul class="command-list">
-            <li>
-                <strong>t?play <span class="fade">項目１</span></strong>
-                <span class="command-description">YouTube動画音声を再生<BR><span class="fade">t?play https://www.youtube.com/watch?v=dQw4w9WgXcQ</span></span>
-                <ul class="command-description">
-                    <li><strong>項目１</strong>YouTube動画のリンク</li>
-                </ul> 
-            </li>
-            <li>
-                <strong>t?skip</strong>
-                <span class="command-description">現在流れている曲をスキップ</span>
-            </li>
-            <li>
-                <strong>t?leave</strong>
-                <span class="command-description">ボイスチャットから退出<BR>強制退出させられるとボットが再起動するまで同じサーバーで使えなくなります</span>
-            </li>
+      <h2>VCコマンド</h2>
+      <ul class="command-list">
+        <li data-keywords="play,再生,YouTube,音声,音楽,プレイ">
+          <strong>t?play <span class="fade">項目１</span></strong>
+          <span class="command-description">YouTube動画音声を再生<br><span class="fade">t?play https://www.youtube.com/watch?v=dQw4w9WgXcQ</span></span>
+          <ul class="command-description">
+            <li><strong>項目１</strong>YouTube動画のリンク</li>
+          </ul>
+        </li>
+        <li data-keywords="skip,スキップ,曲,次">
+          <strong>t?skip</strong>
+          <span class="command-description">現在流れている曲をスキップ</span>
+        </li>
+        <li data-keywords="leave,退出,ボイスチャット">
+          <strong>t?leave</strong>
+          <span class="command-description">ボイスチャットから退出 (強制退出時は再起動まで使用不可)</span>
+        </li>
+      </ul>
     </section>
     <section>
-        <h2>経済コマンド</h2>
-        <ul class="command-list">
-            <li>
-                <strong>t?work</strong>
-                <span class="command-description">働いて報酬を得る</span>
-            </li>
-            <li>
-                <strong>t?crime</strong>
-                <span class="command-description">犯罪を犯して報酬を得るか、罰金を支払う</span>
-            </li>
-            <li>
-                <strong>t?balance</strong>
-                <span class="command-description">現在の所持金を表示</span>
-            </li>
-            <li>
-                <strong>t?leaderboard <span class="fade">項目１</span></strong>
-                <span class="command-description">サーバー内・ボット全体の所持金ランキングを表示<BR><span class="fade">t?leaderboard local</span></span>
-                <ul class="command-description">
-                    <li><strong>項目１</strong>オプション指定の項目です<BR><BR><span class="fade">local:</span> サーバー内ランキング<BR><span class="fade">global:</span> ボット全体ランキング</span></li>
-                </ul> 
-            </li>
-            <li>
-                <strong>t?give <span class="fade">項目１ 項目２</span></strong>
-                <span class="command-description">他ユーザーにお金を送金<BR><span class="fade">t?give @taru 5000</span></span>
-                <ul class="command-description">
-                    <li><strong>項目１</strong>送金するユーザーのメンションまたはユーザー名</li>
-                    <li><strong>項目２</strong>送金する金額<BR><span class="fade">allと入力して所持金全てを指定可能</span></li>
-                </ul> 
-            </li>
-            <li>
-                <strong>t?blackjack <span class="fade">項目１</span></strong>
-                <span class="command-description">ボットとブラックジャックを遊ぶ<BR><span class="fade">t?blackjack 5000</span></span>
-                <ul class="command-description">
-                    <li><strong>項目１</strong>賭ける金額<BR><span class="fade">allと入力して所持金全てを指定可能</span></li>
-                </ul> 
-            </li>
-        </ul>
+      <h2>経済コマンド</h2>
+      <ul class="command-list">
+        <li data-keywords="work,働く,報酬,仕事,職業">
+          <strong>t?work</strong>
+          <span class="command-description">働いて報酬を得る</span>
+        </li>
+        <li data-keywords="crime,犯罪,罰金,報酬">
+          <strong>t?crime</strong>
+          <span class="command-description">犯罪を犯して報酬または罰金</span>
+        </li>
+        <li data-keywords="balance,所持金,確認,お金">
+          <strong>t?balance</strong>
+          <span class="command-description">現在の所持金を表示</span>
+        </li>
+        <li data-keywords="leaderboard,ランキング,所持金,リーダーボード">
+          <strong>t?leaderboard <span class="fade">項目１</span></strong>
+          <span class="command-description">サーバー内・全体の所持金ランキングを表示<br><span class="fade">t?leaderboard local</span></span>
+          <ul class="command-description">
+            <li><strong>項目１</strong>オプション (local: サーバー内, global: 全体)</li>
+          </ul>
+        </li>
+        <li data-keywords="give,送金,お金">
+          <strong>t?give <span class="fade">項目１ 項目２</span></strong>
+          <span class="command-description">他ユーザーにお金を送金<br><span class="fade">t?give @taru 5000</span></span>
+          <ul class="command-description">
+            <li><strong>項目１</strong>送金先のメンションまたは名前</li>
+            <li><strong>項目２</strong>送金金額 (allで全額指定可)</li>
+          </ul>
+        </li>
+        <li data-keywords="blackjack,ブラックジャック,遊ぶ,賭け">
+          <strong>t?blackjack <span class="fade">項目１</span></strong>
+          <span class="command-description">ボットとブラックジャックを遊ぶ<br><span class="fade">t?blackjack 5000</span></span>
+          <ul class="command-description">
+            <li><strong>項目１</strong>賭け金額 (allで全額指定可)</li>
+          </ul>
+        </li>
+      </ul>
     </section>
     <section>
-        <h2>その他</h2>
-        <ul class="command-list">
-            <li>
-                <strong>t?dice <span class="fade">項目１ 項目２</span></strong>
-                <span class="command-description">サイコロを回す<BR><span class="fade">t?dice 1d100 int</span></span>
-                <ul class="command-description">
-                    <li><strong>項目１</strong>サイコロの面と回す回数の指定<BR><span class="fade">サイコロの面d回す回数</span></li>
-                    <li><strong>項目２（任意）</strong>オプション指定の項目です<BR><BR><span class="fade">int:</span> 結果を全て整数値にする<BR><span class="fade">float:</span> 結果をすべて小数点第5位を四捨五入した浮動小数点数（小数）にする</span></li>
-                </ul>
-            </li>
-            <li>
-                <strong>t?coinflip</strong>
-                <span class="command-description">コインを投げる</span>
-            </li>
-            <li>
-                <strong>t?janken</strong>
-                <span class="command-description">ボットとじゃんけんを遊ぶ</span>
-            </li>
-            <li>
-                <strong>t?today</strong>
-                <span class="command-description">今日が何の日か表示する</span>
-            </li>
-        </ul>
+      <h2>その他</h2>
+      <ul class="command-list">
+        <li data-keywords="dice,サイコロ,振る,乱数,ランダム">
+          <strong>t?dice <span class="fade">項目１ 項目２</span></strong>
+          <span class="command-description">サイコロを振る<br><span class="fade">t?dice 1d100 int</span></span>
+          <ul class="command-description">
+            <li><strong>項目１</strong>サイコロの面数と回数 (例: 1d100)</li>
+            <li><strong>項目２（任意）</strong>オプション (int: 整数, float: 四捨五入浮動小数点)</li>
+          </ul>
+        </li>
+        <li data-keywords="coinflip,コイン,投げる,ランダム,裏,表">
+          <strong>t?coinflip</strong>
+          <span class="command-description">コインを投げる</span>
+        </li>
+        <li data-keywords="janken,じゃんけん,遊ぶ">
+          <strong>t?janken</strong>
+          <span class="command-description">ボットとじゃんけんを遊ぶ</span>
+        </li>
+        <li data-keywords="today,今日,記念日,イベント,何の日">
+          <strong>t?today</strong>
+          <span class="command-description">今日が何の日かを表示する</span>
+        </li>
+      </ul>
     </section>
     <section>
-        <h2>ジョークコマンド</h2>
-        <span class="command-list">
-            <li>
-                <strong>t?fart</strong>
-                <span class="command-description">VCに参加しておならする</span>
-            </li>
-            <li>
-                <strong>t?kill <span class="fade">項目１ 項目２</span></strong>
-                <span class="command-description">ユーザーをキル<BR><span class="fade">t?kill @taru thunder</span></span>
-                <ul class="command-description">
-                    <li><strong>項目１</strong>殺すユーザーのメンション</li>
-                    <li><strong>項目２（任意）</strong>オプション指定の項目です<BR><BR><span class="fade">shoot, drowned, explode, fall, burn, lava, thunder, magic, froze, attack</span></li>
-                </ul>
-            </li>
-        </span>
+      <h2>ジョークコマンド</h2>
+      <ul class="command-list">
+        <li data-keywords="fart,おなら,VC,屁">
+          <strong>t?fart</strong>
+          <span class="command-description">VCに参加しておならをする</span>
+        </li>
+        <li data-keywords="kill,キル,ユーザー,攻撃,殺">
+          <strong>t?kill <span class="fade">項目１ 項目２</span></strong>
+          <span class="command-description">ユーザーをキルする<br><span class="fade">t?kill @taru thunder</span></span>
+          <ul class="command-description">
+            <li><strong>項目１</strong>対象ユーザーのメンション</li>
+            <li><strong>項目２（任意）</strong>オプション (shoot, drowned, explode, fall, burn, lava, thunder, magic, froze, attack)</li>
+          </ul>
+        </li>
+      </ul>
     </section>
   </main>
   <footer>
     <p><span class="specialfont">©</span> 2025 たるボット運営 | <a href="terms_of_service.html">利用規約</a> | <a href="privacy_policy.html">プライバシーポリシー</a></p>
   </footer>
+  <script>
+    document.getElementById("searchInput").addEventListener("input", function() {
+      var query = this.value.toLowerCase();
+      var commandItems = document.querySelectorAll(".command-list li");
+      commandItems.forEach(function(item) {
+        var keywords = item.getAttribute("data-keywords") || "";
+        var text = item.textContent.toLowerCase();
+        if (text.indexOf(query) !== -1 || keywords.toLowerCase().indexOf(query) !== -1) {
+          item.style.display = "";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    });
+  </script>
 </body>
 </html>
