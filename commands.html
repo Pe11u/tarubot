@@ -96,6 +96,15 @@
     ul li:hover {
       background: rgba(255, 255, 255, 0.3);
     }
+    /* アニメーション用のスタイル */
+    .command-list li {
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .command-list li.hidden {
+      opacity: 0;
+      transform: scale(0.95);
+      pointer-events: none;
+    }
     .button-container {
       text-align: center;
       margin-top: 1.5rem;
@@ -276,8 +285,8 @@
           <strong>t?intent <span class="fade">項目１ 項目２ 項目３</span></strong>
           <span class="command-description">ボットとして埋め込みメッセージを送信<br><span class="fade">t?intent お知らせ たるボット green</span></span>
           <ul class="command-description">
-            <li><strong>項目１</strong>タイトル (空白は''または\"\")</li>
-            <li><strong>項目２</strong>内容 (空白は''または\"\")</li>
+            <li><strong>項目１</strong>タイトル (空白は''または"")</li>
+            <li><strong>項目２</strong>内容 (空白は''または"")</li>
             <li><strong>項目３（任意）</strong>メッセージの色 (HEXまたは英語名)</li>
           </ul>
         </li>
@@ -480,9 +489,9 @@
         var keywords = item.getAttribute("data-keywords") || "";
         var text = item.textContent.toLowerCase();
         if (text.indexOf(query) !== -1 || keywords.toLowerCase().indexOf(query) !== -1) {
-          item.style.display = "";
+          item.classList.remove("hidden");
         } else {
-          item.style.display = "none";
+          item.classList.add("hidden");
         }
       });
     });
