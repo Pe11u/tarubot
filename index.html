@@ -81,6 +81,44 @@
       font-size: 1.5rem;
       margin: 1.5rem 0;
     }
+    .news-section {
+      position: absolute;
+      top: 50px;
+      right: 20px;
+      width: 300px;
+      background: rgba(255, 255, 255, 0.3);
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(5px);
+    }
+    
+    .news-section h2 {
+      font-size: 1.4rem;
+      color: #ff6f61;
+      border-bottom: 2px solid #ff6f61;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .news-section ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .news-section li {
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 4px;
+    }
+    
+    .news-section li .date {
+      font-weight: bold;
+      color: #005bb5;
+      margin-right: 8px;
+    }
+
   </style>
 </head>
 <body>
@@ -123,6 +161,14 @@
       </div>
     </section>
   </main>
+  
+  <aside class="news-section">
+    <h2>📢 最新のお知らせ</h2>
+    <ul>
+      <li><span class="date">2025年3月</span> - <b>【祝】ボット常時起動＆高速化</b></li>
+      <li><span class="date">2025年1月</span> - ボット設立</li>
+    </ul>
+  </aside>
 
   <footer>
     <p><span class="specialfont">©</span> 2025 たるボット運営 | <a href="terms_of_service.html">利用規約</a> | <a href="privacy_policy.html">プライバシーポリシー</a></p>
