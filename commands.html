@@ -485,18 +485,25 @@
     <p><span class="specialfont">©</span> 2025 たるボット運営 | <a href="terms_of_service.html">利用規約</a> | <a href="privacy_policy.html">プライバシーポリシー</a></p>
   </footer>
   <script>
-    document.getElementById("searchInput").addEventListener("input", function() {
-      var query = this.value.toLowerCase();
-      var commandItems = document.querySelectorAll(".command-list li");
-      commandItems.forEach(function(item) {
-        var parentText = item.querySelector("strong").textContent.toLowerCase();
-        var keywords = item.getAttribute("data-keywords") || "";
-        if (parentText.indexOf(query) !== -1 || keywords.toLowerCase().indexOf(query) !== -1) {
-          item.classList.remove("hidden");
-        } else {
-          item.classList.add("hidden");
-        }
-      });
+    document.getElementById('search-bar').addEventListener('input', function() {
+        const query = this.value.toLowerCase();
+        document.querySelectorAll('.command-list li').forEach(li => {
+            const keywords = li.getAttribute('data-keywords')?.toLowerCase() || '';
+            const matches = keywords.includes(query);
+    
+            if (matches) {
+                li.style.display = '';
+            } else {
+                const parent = li.closest('ul').parentElement; 
+                const parentKeywords = parent?.getAttribute('data-keywords')?.toLowerCase() || '';
+    
+                if (parentKeywords.includes(query)) {
+                    li.style.display = '';
+                } else {
+                    li.style.display = 'none';
+                }
+            }
+        });
     });
   </script>
 </body>
