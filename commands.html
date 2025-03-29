@@ -96,13 +96,16 @@
     ul li:hover {
       background: rgba(255, 255, 255, 0.3);
     }
-    /* アニメーション用のスタイル */
+    /* アニメーションと高さ縮小用のスタイル */
     .command-list li {
-      transition: opacity 0.3s ease, transform 0.3s ease;
+      overflow: hidden;
+      transition: opacity 0.3s ease, transform 0.3s ease, max-height 0.3s ease;
+      max-height: 500px; /* 通常時の十分な高さ */
     }
     .command-list li.hidden {
       opacity: 0;
       transform: scale(0.95);
+      max-height: 0;
       pointer-events: none;
     }
     .button-container {
@@ -486,9 +489,9 @@
       var query = this.value.toLowerCase();
       var commandItems = document.querySelectorAll(".command-list li");
       commandItems.forEach(function(item) {
+        var parentText = item.querySelector("strong").textContent.toLowerCase();
         var keywords = item.getAttribute("data-keywords") || "";
-        var text = item.textContent.toLowerCase();
-        if (text.indexOf(query) !== -1 || keywords.toLowerCase().indexOf(query) !== -1) {
+        if (parentText.indexOf(query) !== -1 || keywords.toLowerCase().indexOf(query) !== -1) {
           item.classList.remove("hidden");
         } else {
           item.classList.add("hidden");
