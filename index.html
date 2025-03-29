@@ -24,9 +24,24 @@
       padding: 0;
       line-height: 1.6;
     }
+    header {
+      padding: 1rem;
+      text-align: center;
+    }
+    header nav ul {
+      list-style: none;
+      padding: 0;
+      display: inline-flex;
+      gap: 1rem;
+    }
+    header nav ul li a {
+      text-decoration: none;
+      color: #005bb5;
+    }
     main {
       max-width: 960px;
       margin: 2rem auto;
+      margin-right: 320px;
       padding: 1rem;
       background: rgba(255, 255, 255, 0.2);
       border-radius: 8px;
@@ -36,10 +51,15 @@
       margin-bottom: 2rem;
       padding: 1rem;
     }
+    h1, h2 {
+      margin: 0 0 1rem;
+    }
     h2 {
       border-bottom: 2px solid #ff6f61;
       padding-bottom: 0.5rem;
-      margin-bottom: 1rem;
+    }
+    p {
+      margin: 1rem 0;
     }
     ul {
       list-style-type: none;
@@ -74,51 +94,49 @@
       background: #ff867f;
       transform: scale(1.05);
     }
-    p {
-      margin: 1rem 0;
-    }
     b {
       font-size: 1.5rem;
       margin: 1.5rem 0;
     }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.2);
+    }
     .news-section {
-      position: absolute;
+      position: fixed;
       top: 50px;
       right: 20px;
-      width: 300px;
+      width: 280px;
+      height: calc(100% - 70px);
       background: rgba(255, 255, 255, 0.3);
       padding: 1rem;
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
       backdrop-filter: blur(5px);
+      overflow-y: auto;
     }
-    
     .news-section h2 {
       font-size: 1.4rem;
-      color: #ff6f61;
       border-bottom: 2px solid #ff6f61;
       padding-bottom: 0.5rem;
       margin-bottom: 1rem;
     }
-    
     .news-section ul {
       list-style: none;
       padding: 0;
     }
-    
     .news-section li {
       margin: 0.5rem 0;
       padding: 0.5rem;
       background: rgba(255, 255, 255, 0.4);
       border-radius: 4px;
     }
-    
     .news-section li .date {
       font-weight: bold;
       color: #005bb5;
       margin-right: 8px;
     }
-
   </style>
 </head>
 <body>
@@ -136,7 +154,8 @@
   <main>
     <section>
       <h2>たるボットとは？</h2>
-      <p>たるボットは、あなたのDiscordサーバーを次元を超える体験に変える多機能ボットです。このボットは、サーバー管理の効率化だけでなく、ユーザー同士の交流をより豊かにするための多彩な機能を搭載しています。<BR><BR>その多機能性と直感的な使いやすさが特徴であり、初心者から上級者まで誰でも簡単に使いこなせるため、サーバーの運営を支援し、コミュニティ全体を盛り上げることができます。たるボットを使うことで、他のサーバーでは味わえない、次元を超えた体験をすることができるでしょう。</p>
+      <p>たるボットは、あなたのDiscordサーバーを次元を超える体験に変える多機能ボットです。このボットは、サーバー管理の効率化だけでなく、ユーザー同士の交流をより豊かにするための多彩な機能を搭載しています。<br><br>
+      その多機能性と直感的な使いやすさが特徴であり、初心者から上級者まで誰でも簡単に使いこなせるため、サーバーの運営を支援し、コミュニティ全体を盛り上げることができます。たるボットを使うことで、他のサーバーでは味わえない、次元を超えた体験をすることができるでしょう。</p>
     </section>
     
     <section>
@@ -150,9 +169,9 @@
         <li>📷 <b>QRコード機能</b> - QRコードの生成・読み取りが可能。</li>
         <li>💻 <b>変換機能</b> - Base64, Base58, Base32, Punycode, Percentなどの複数の種類の文字列の変換。</li>
       </ul>
-      <p>たるボットのコマンドには基本的な管理機能に加え、ボイスチャンネルでの<b>YouTube音楽再生</b>や、<b>地震・津波情報</b>の取得、さらには<b>列車の遅延状況をリアルタイムで</b>取得することができます。これらの機能により、サーバー内でのコミュニケーションがスムーズに進むだけでなく、ユーザーの安全や便利さを守ることができ、非常に多用途に活用できます。<BR><BR>また、たるボットはエンターテイメント機能も充実しており、様々なゲームやイベントの進行をサポートする機能が満載です。さらに、ボット内で稼げる<b>仮想通貨システム</b>や、<b>QRコードの生成</b>、またパソコンだけではできない便利な<b>QRコード読み取り</b>機能もあり、日常的に使用することでより便利に、楽しく、効率的にDiscordサーバーを運営することができます。これだけではなく、他にももっと便利で楽しい機能が、 <b>40個以上</b> 備わっています！まだまだ開発中なので、機能は今後もさらに追加されていきます。</p>
+      <p>たるボットのコマンドには基本的な管理機能に加え、ボイスチャンネルでの<b>YouTube音楽再生</b>や、<b>地震・津波情報</b>の取得、さらには<b>列車の遅延状況をリアルタイムで</b>取得することができます。これらの機能により、サーバー内でのコミュニケーションがスムーズに進むだけでなく、ユーザーの安全や便利さを守ることができ、非常に多用途に活用できます。<br><br>
+      また、たるボットはエンターテイメント機能も充実しており、様々なゲームやイベントの進行をサポートする機能が満載です。さらに、ボット内で稼げる<b>仮想通貨システム</b>や、<b>QRコードの生成</b>、またパソコンだけではできない便利な<b>QRコード読み取り</b>機能もあり、日常的に使用することでより便利に、楽しく、効率的にDiscordサーバーを運営することができます。これだけではなく、他にももっと便利で楽しい機能が、 <b>40個以上</b> 備わっています！まだまだ開発中なので、機能は今後もさらに追加されていきます。</p>
     </section>
-    
     <section>
       <h2>🚀 たるボットを追加しよう！ 🚀</h2>
       <p>今すぐ招待リンクからあなたのサーバーにたるボットを追加し、その多彩な機能を体感してください。</p>
@@ -161,7 +180,6 @@
       </div>
     </section>
   </main>
-  
   <aside class="news-section">
     <h2>📢 最新のお知らせ</h2>
     <ul>
@@ -169,7 +187,6 @@
       <li><span class="date">2025年1月</span> - ボット設立</li>
     </ul>
   </aside>
-
   <footer>
     <p><span class="specialfont">©</span> 2025 たるボット運営 | <a href="terms_of_service.html">利用規約</a> | <a href="privacy_policy.html">プライバシーポリシー</a></p>
   </footer>
