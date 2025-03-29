@@ -96,11 +96,10 @@
     ul li:hover {
       background: rgba(255, 255, 255, 0.3);
     }
-    /* アニメーションと高さ縮小用のスタイル */
     .command-list li {
       overflow: hidden;
       transition: opacity 0.3s ease, transform 0.3s ease, max-height 0.3s ease;
-      max-height: 500px; /* 通常時の十分な高さ */
+      max-height: 500px;
     }
     .command-list li.hidden {
       opacity: 0;
@@ -184,10 +183,10 @@
 </head>
 <body>
   <div id="search-container">
-    <input type="text" id="searchInput" placeholder="コマンドを検索">
+    <input type="text" id="searchInput" placeholder="コマンドを検索…">
   </div>
   <header>
-    <h1>コマンド一覧</h1>
+    <h1>たるボット - コマンド一覧</h1>
     <nav>
       <ul>
         <li><a href="index.html">ホーム</a></li>
