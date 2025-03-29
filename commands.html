@@ -179,6 +179,24 @@
     footer a:hover {
       text-decoration: underline;
     }
+    .command-list li {
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    
+    .command-list li[style*="display: none"] {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    
+    .command-section {
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    
+    .command-section[style*="display: none"] {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
   </style>
 </head>
 <body>
@@ -484,26 +502,38 @@
     <p><span class="specialfont">©</span> 2025 たるボット運営 | <a href="terms_of_service.html">利用規約</a> | <a href="privacy_policy.html">プライバシーポリシー</a></p>
   </footer>
   <script>
-    document.getElementById('searchInput').addEventListener('input', function() {
-        const query = this.value.toLowerCase();
-        document.querySelectorAll('.command-list li').forEach(li => {
-            const keywords = li.getAttribute('data-keywords')?.toLowerCase() || '';
-            const matches = keywords.includes(query);
+document.getElementById('searchInput').addEventListener('input', function() {
+    const query = this.value.toLowerCase();
     
-            if (matches) {
+    document.querySelectorAll('.command-list li').forEach(li => {
+        const keywords = li.getAttribute('data-keywords')?.toLowerCase() || '';
+        const matches = keywords.includes(query);
+        
+        if (matches) {
+            li.style.display = '';
+        } else {
+            const parent = li.closest('ul').parentElement; 
+            const parentKeywords = parent?.getAttribute('data-keywords')?.toLowerCase() || '';
+            
+            if (parentKeywords.includes(query)) {
                 li.style.display = '';
             } else {
-                const parent = li.closest('ul').parentElement; 
-                const parentKeywords = parent?.getAttribute('data-keywords')?.toLowerCase() || '';
-    
-                if (parentKeywords.includes(query)) {
-                    li.style.display = '';
-                } else {
-                    li.style.display = 'none';
-                }
+                li.style.display = 'none';
             }
-        });
+        }
     });
+    document.querySelectorAll('.command-section').forEach(section => {
+        const commands = section.querySelectorAll('.command-list li');
+        const isAnyCommandVisible = Array.from(commands).some(li => li.style.display !== 'none');
+        
+        if (isAnyCommandVisible) {
+            section.style.display = '';
+        } else {
+            section.style.display = 'none';
+        }
+    });
+});
+
   </script>
 </body>
 </html>
