@@ -5,147 +5,146 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>たるボット - ホーム</title>
   <link rel="stylesheet" href="assets/styles.css">
-  <link rel="icon" href="assets/logo.png" />
+  <link rel="icon" href="assets/logo.png">
   <style>
-    @font-face {
-      font-family: 'Uzura';
-      src: url('assets/uzura.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-    }
-    .specialfont {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
     body {
-      background: linear-gradient(135deg, #87CEFA, #DDA0DD);
-      color: #005bb5;
-      font-family: 'Uzura', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
       margin: 0;
       padding: 0;
-      line-height: 1.6;
+      color: #333;
     }
+
     header {
-      padding: 1rem;
+      background-color: #333;
+      color: white;
+      padding: 20px;
       text-align: center;
     }
-    header nav ul {
-      list-style: none;
-      padding: 0;
-      display: inline-flex;
-      gap: 1rem;
+
+    header h1 {
+      margin: 0;
     }
-    header nav ul li a {
-      text-decoration: none;
-      color: #005bb5;
-    }
-    main {
-      max-width: 960px;
-      margin: 2rem auto;
-      margin-right: 350px;
-      padding: 1rem;
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-    section {
-      margin-bottom: 2rem;
-      padding: 1rem;
-    }
-    h1, h2 {
-      margin: 0 0 1rem;
-    }
-    h2 {
-      border-bottom: 2px solid #ff6f61;
-      padding-bottom: 0.5rem;
-    }
-    p {
-      margin: 1rem 0;
-    }
-    ul {
+
+    nav ul {
       list-style-type: none;
       padding: 0;
     }
-    ul li {
-      background: rgba(255, 255, 255, 0.2);
-      margin: 0.5rem 0;
-      padding: 0.75rem;
-      border-radius: 4px;
-      transition: background 0.3s;
+
+    nav ul li {
+      display: inline;
+      margin: 0 10px;
     }
-    ul li:hover {
-      background: rgba(255, 255, 255, 0.3);
-    }
-    .button-container {
-      text-align: center;
-      margin-top: 1.5rem;
-    }
-    .button {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      background: #ff6f61;
-      color: #fff;
+
+    nav ul li a {
+      color: white;
       text-decoration: none;
-      font-weight: bold;
-      border-radius: 4px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-      transition: background 0.3s, transform 0.3s;
+      font-size: 16px;
     }
-    .button:hover {
-      background: #ff867f;
-      transform: scale(1.05);
+
+    nav ul li a:hover {
+      text-decoration: underline;
     }
-    b {
-      font-size: 1.5rem;
-      margin: 1.5rem 0;
+
+    main {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin-right: 320px;
     }
+
+    h2 {
+      color: #333;
+    }
+
+    section {
+      margin-bottom: 20px;
+    }
+
+    section ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    section a {
+      color: #1e90ff;
+      text-decoration: none;
+    }
+
+    section a:hover {
+      text-decoration: underline;
+    }
+
     footer {
+      background-color: #333;
+      color: white;
+      padding: 10px;
       text-align: center;
-      padding: 1rem;
-      background: #fff;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
     }
+
+    footer p {
+      margin: 0;
+    }
+
+    footer a {
+      color: #1e90ff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
     .news-section {
       position: fixed;
-      top: 175px;
+      top: 100px;
       right: 20px;
       width: 280px;
-      height: calc(100% - 70px);
-      background: rgba(255, 255, 255, 0.3);
-      padding: 1rem;
+      height: calc(100% - 140px);
+      background: rgba(255,255,255,0.9);
+      padding: 20px;
       border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(5px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
       overflow-y: auto;
     }
+
     .news-section h2 {
-      font-size: 1.4rem;
-      border-bottom: 2px solid #ff6f61;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1rem;
+      font-size: 20px;
+      color: #333;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
     }
+
     .news-section ul {
       list-style: none;
       padding: 0;
+      margin: 0;
     }
+
     .news-section li {
-      margin: 0.5rem 0;
-      padding: 0.5rem;
-      background: rgba(255, 255, 255, 0.4);
+      margin-bottom: 10px;
+      padding: 5px;
+      background: #f9f9f9;
       border-radius: 4px;
     }
+
     .news-section li .date {
       font-weight: bold;
-      color: #005bb5;
-      margin-right: 8px;
-    }
-    .news-section b {
-      font-size: 1.1rem;
-      margin: 1.1rem 0;
+      color: #333;
+      margin-right: 5px;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>🔥 たるボットへようこそ 🔥</h1>
+    <h1>たるボット</h1>
     <nav>
       <ul>
         <li><a href="commands.html">コマンド一覧</a></li>
@@ -158,43 +157,8 @@
   <main>
     <section>
       <h2>たるボットとは？</h2>
-      <p>たるボットは、あなたのDiscordサーバーを次元を超える体験に変える多機能ボットです。このボットは、サーバー管理の効率化だけでなく、ユーザー同士の交流をより豊かにするための多彩な機能を搭載しています。<br><br>
-      その多機能性と直感的な使いやすさが特徴であり、初心者から上級者まで誰でも簡単に使いこなせるため、サーバーの運営を支援し、コミュニティ全体を盛り上げることができます。たるボットを使うことで、他のサーバーでは味わえない、次元を超えた体験をすることができるでしょう。</p>
-    </section>
-    
-    <section>
-      <h2>✨ 主な機能 ✨</h2>
-      <ul>
-        <li>🔹 <b>管理機能</b> - 柔軟なタイムアウト設定、メッセージ一括削除など。</li>
-        <li>🎵 <b>音楽機能</b> - スムーズな音楽ストリーミングを実現。</li>
-        <li>🌍 <b>生活機能</b> - 地震情報、電車の遅延などのリアルタイム情報。</li>
-        <li>💰 <b>経済システム</b> - 仮想通貨を稼ぎ、ランキング上位を目指す。</li>
-        <li>🗒️ <b>情報機能</b> - サーバー・チャンネル・ユーザーの詳しい情報の取得。</li>
-        <li>📷 <b>QRコード機能</b> - QRコードの生成・読み取りが可能。</li>
-        <li>💻 <b>変換機能</b> - Base64, Base58, Base32, Punycode, Percentなどの複数の種類の文字列の変換。</li>
-      </ul>
-      <p>たるボットのコマンドには基本的な管理機能に加え、ボイスチャンネルでの<b>YouTube音楽再生</b>や、<b>地震・津波情報</b>の取得、さらには<b>列車の遅延状況をリアルタイムで</b>取得することができます。これらの機能により、サーバー内でのコミュニケーションがスムーズに進むだけでなく、ユーザーの安全や便利さを守ることができ、非常に多用途に活用できます。<br><br>
-      また、たるボットはエンターテイメント機能も充実しており、様々なゲームやイベントの進行をサポートする機能が満載です。さらに、ボット内で稼げる<b>仮想通貨システム</b>や、<b>QRコードの生成</b>、またパソコンだけではできない便利な<b>QRコード読み取り</b>機能もあり、日常的に使用することでより便利に、楽しく、効率的にDiscordサーバーを運営することができます。これだけではなく、他にももっと便利で楽しい機能が、 <b>40個以上</b> 備わっています！まだまだ開発中なので、機能は今後もさらに追加されていきます。</p>
-    </section>
-    
-    <section>
-      <h2>🚀 たるボットを追加しよう！ 🚀</h2>
-      <p>今すぐ招待リンクからあなたのサーバーにたるボットを追加し、その多彩な機能を体感してください。</p>
-      <div class="button-container">
-        <a href="https://discord.com/oauth2/authorize?client_id=1327492378420052018&permissions=8&integration_type=0&scope=bot" target="_blank" class="button">📌 ボットを追加する</a>
-      </div>
+      <p>たるボットは、Discordサーバーをより楽しく、便利にするための多機能ボットです。</p>
     </section>
   </main>
-  <aside class="news-section">
-    <h2>📢 最新のお知らせ</h2>
-    <ul>
-      <li><span class="date">2025年3月</span> - <b>【祝】ボット常時起動＆高速化</b></li>
-      <li><span class="date">2025年1月</span> - ボット設立</li>
-    </ul>
-  </aside>
-
-  <footer>
-    <p><span class="specialfont">©</span> 2025 たるボット運営 | <a href="terms_of_service.html">利用規約</a> | <a href="privacy_policy.html">プライバシーポリシー</a></p>
-  </footer>
 </body>
 </html>
