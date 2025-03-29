@@ -172,10 +172,10 @@
 </head>
 <body>
   <div id="search-container">
-    <input type="text" id="searchInput" placeholder="Search commands...">
+    <input type="text" id="searchInput" placeholder="コマンドを検索">
   </div>
   <header>
-    <h1>たるボット コマンド一覧</h1>
+    <h1>コマンド一覧</h1>
     <nav>
       <ul>
         <li><a href="index.html">ホーム</a></li>
@@ -196,7 +196,7 @@
           <strong>t?tarubot</strong>
           <span class="command-description">ボットの情報を表示</span>
         </li>
-        <li data-keywords="ping,レイテンシ,応答,速度">
+        <li data-keywords="ping,レイテンシ,応答,速度,ピング">
           <strong>t?ping</strong>
           <span class="command-description">ボットの応答速度（レイテンシ）を確認</span>
         </li>
@@ -221,11 +221,11 @@
             <li><strong>項目２</strong>BANする理由</li>
           </ul>
         </li>
-        <li data-keywords="banlist,BAN,一覧,バン">
+        <li data-keywords="banlist,BAN,禁止,一覧,バン">
           <strong>t?banlist</strong>
           <span class="command-description">過去にBANされたユーザーのIDを確認</span>
         </li>
-        <li data-keywords="unban,解除,BAN,アンロック,アンバン">
+        <li data-keywords="unban,解除,BAN,禁止,アンロック,アンバン">
           <strong>t?unban <span class="fade">項目１</span></strong>
           <span class="command-description">過去にBANしたユーザーのBANを解除<br><span class="fade">t?unban tarutaru_jpn</span></span>
           <ul class="command-description">
@@ -248,7 +248,7 @@
             <li><strong>項目１</strong>タイムアウトを解除するユーザーのメンション<br><span class="fade">t?untimeout @taru</span></li>
           </ul>
         </li>
-        <li data-keywords="clear,メッセージ,削除,一括">
+        <li data-keywords="clear,メッセージ,削除,一括,クリア">
           <strong>t?clear <span class="fade">項目１</span> <span class="fade">項目２</span></strong>
           <span class="command-description">複数のメッセージを一括削除<br><span class="fade">t?clear 100 @taru</span></span>
           <ul class="command-description">
